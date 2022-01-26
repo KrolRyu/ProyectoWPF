@@ -14,9 +14,9 @@ namespace ProyectoParking.Servicios
         {
             //Instalar el paquete NuGet Microsoft.Data.Sqlite
 
-            //Crea una conexión al fichero de base de datos prueba.db
+            //Crea una conexión al fichero de base de datos parking.db
             //Si no existe, lo creará
-            SqliteConnection conexion = new SqliteConnection("Data Source=parking.db");
+            SqliteConnection conexion = new SqliteConnection("Data Source=C:/ProyectoParking/database/parking.db");
 
             //Abre la conexión con la base de datos
             conexion.Open();
