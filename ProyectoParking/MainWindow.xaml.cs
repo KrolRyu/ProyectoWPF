@@ -43,6 +43,7 @@ namespace ProyectoParking
                 default:
                     break;
             }
+            Servicios.DatabaseService.ConnectDatabase();
         }
     }
 }
