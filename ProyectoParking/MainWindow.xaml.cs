@@ -23,6 +23,7 @@ namespace ProyectoParking
         public MainWindow()
         {
             InitializeComponent();
+            Servicios.DatabaseService.ConnectDatabase();
         }
     }
 }
