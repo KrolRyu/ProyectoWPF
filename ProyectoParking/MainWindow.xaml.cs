@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoParking.vistas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,25 @@ namespace ProyectoParking
         public MainWindow()
         {
             InitializeComponent();
+            this.contentControl.Content = new Inicio();
+        }
+
+        private void navigationDrawer_ItemClicked(object sender, Syncfusion.UI.Xaml.NavigationDrawer.NavigationItemClickedEventArgs e)
+        {
+            switch ((sender as Button).Tag)
+            {
+                case "Clientes":
+                    contentControl.Content = new Clientes();
+                    break;
+                case "Vehiculos":
+                    contentControl.Content = new Vehiculos();
+                    break;
+                case "Estacionamientos":
+                    contentControl.Content = new Estacionamientos();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
