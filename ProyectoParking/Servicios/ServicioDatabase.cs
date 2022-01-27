@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace ProyectoParking.Servicios
 {
-    static class DatabaseService
+    static class ServicioDatabase
     {
         public static void ConnectDatabase()
         {

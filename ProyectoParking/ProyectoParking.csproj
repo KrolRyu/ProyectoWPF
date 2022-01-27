@@ -159,10 +159,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClasesModelo\Marca.cs" />
+    <Compile Include="servicios\ServicioDatabase.cs" />
+    <Compile Include="Servicios\ServicioComprobarCara.cs" />
+    <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\DatabaseService.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioImgs.cs" />
-    <Compile Include="MainWindowVM.cs" />
+    <Compile Include="vistamodelo\ClientesVM.cs" />
+    <Compile Include="vistamodelo\EstacionamientosVM.cs" />
+    <Compile Include="vistamodelo\InicioVM.cs" />
+    <Compile Include="vistamodelo\VehiculosVM.cs" />
     <Compile Include="vistas\Clientes.xaml.cs">
       <DependentUpon>Clientes.xaml</DependentUpon>
     </Compile>
@@ -172,6 +179,7 @@
     <Compile Include="vistas\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="vistamodelo\MainWindowVM.cs" />
     <Compile Include="vistas\Vehiculos.xaml.cs">
       <DependentUpon>Vehiculos.xaml</DependentUpon>
     </Compile>

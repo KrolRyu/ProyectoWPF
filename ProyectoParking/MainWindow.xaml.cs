@@ -21,15 +21,18 @@ namespace ProyectoParking
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowVM vm = new MainWindowVM();
         public MainWindow()
         {
             InitializeComponent();
+            Servicios.ServicioDatabase.ConnectDatabase();
             this.contentControl.Content = new Inicio();
+            DataContext = vm;
         }
 
         private void navigationDrawer_ItemClicked(object sender, Syncfusion.UI.Xaml.NavigationDrawer.NavigationItemClickedEventArgs e)
-        {
-            switch ((sender as Button).Tag)
+        {                    
+            switch (e.Item.Tag)
             {
                 case "Clientes":
                     contentControl.Content = new Clientes();
@@ -43,7 +46,6 @@ namespace ProyectoParking
                 default:
                     break;
             }
-            Servicios.DatabaseService.ConnectDatabase();
         }
     }
 }
