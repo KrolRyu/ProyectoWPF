@@ -156,6 +156,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClasesModelo\Marca.cs" />
+    <Compile Include="servicios\ServicioDatabase.cs" />
+    <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\DatabaseService.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioImgs.cs" />
@@ -231,6 +234,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="vistamodelo\" />
+  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup />
   <ItemGroup>
