@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace ProyectoParking.Servicios
 {
-    static class DatabaseService
+    static class ServicioDatabase
     {
         public static void ConnectDatabase()
         {
@@ -16,7 +16,7 @@ namespace ProyectoParking.Servicios
 
             //Crea una conexión al fichero de base de datos parking.db
             //Si no existe, lo creará
-            SqliteConnection conexion = new SqliteConnection("Data Source=C:/ProyectoParking/database/parking.db");
+            SqliteConnection conexion = new SqliteConnection("Data Source=C:/ProyectoParking/database/3parking.db");
 
             //Abre la conexión con la base de datos
             conexion.Open();

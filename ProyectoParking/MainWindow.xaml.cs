@@ -24,6 +24,7 @@ namespace ProyectoParking
         public MainWindow()
         {
             InitializeComponent();
+            Servicios.ServicioDatabase.ConnectDatabase();
             this.contentControl.Content = new Inicio();
         }
 
@@ -43,7 +44,6 @@ namespace ProyectoParking
                 default:
                     break;
             }
-            Servicios.DatabaseService.ConnectDatabase();
         }
     }
 }
