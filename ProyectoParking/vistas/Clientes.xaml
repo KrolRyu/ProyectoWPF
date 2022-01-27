@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ProyectoParking.vistas.Clientes"
+﻿<UserControl xmlns:syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="ProyectoParking.vistas.Clientes"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,8 +6,12 @@
              xmlns:local="clr-namespace:ProyectoParking.vistas"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontSize="30" FontFamily="Kiona">CLIENTES</TextBlock>
+    <DockPanel >
+        <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="30" FontFamily="Kiona">CLIENTES</TextBlock>
+        <Button DockPanel.Dock="Right" Width="50" Height="20" VerticalAlignment="Bottom" Margin="10">
+            <Image Source="img/remove.png"></Image>
+        </Button>
+        <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Clientes}"/> <!-- Clientes recupera todos los clientes en la VM de Cliente-->
         
-    </Grid>
+    </DockPanel>
 </UserControl>
