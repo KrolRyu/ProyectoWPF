@@ -12,7 +12,7 @@ namespace ProyectoParking.Servicios
     {
         public static void ConnectDatabase()
         {
-            //Instalar el paquete NuGet Microsoft.Data.Sqlite
+            /*Instalar el paquete NuGet Microsoft.Data.Sqlite
 
             //Crea una conexión al fichero de base de datos parking.db
             //Si no existe, lo creará
@@ -57,7 +57,7 @@ namespace ProyectoParking.Servicios
                                   "insert into vehiculos (id_vehiculo, id_cliente, matricula, id_marca, modelo, tipo) values (4, 3, 'WBA3N3C54FF518798', 4, 'Sierra 3500', 'Male');" +
                                   "insert into vehiculos (id_vehiculo, id_cliente, matricula, id_marca, modelo, tipo) values (5, 5, '1FAHP2DW5BG954722', 5, 'Camry Solara', 'Female');";
             //Cerramos la conexión
-            conexion.Close();
+            conexion.Close();*/
         }
     }
 }

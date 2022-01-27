@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"> Texto de Ejemplo CLIENTES </TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontSize="30" FontFamily="Kiona">CLIENTES</TextBlock>
+        
     </Grid>
 </UserControl>
