@@ -163,7 +163,6 @@
     <Compile Include="servicios\ServicioDatabase.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
-    <Compile Include="Servicios\DatabaseService.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioImgs.cs" />
     <Compile Include="vistamodelo\ClientesVM.cs" />
@@ -241,9 +240,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="vistamodelo\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <Resource Include="img\car.png" />

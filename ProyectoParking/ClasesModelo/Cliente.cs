@@ -74,7 +74,6 @@ namespace ProyectoParking.ClasesModelo
 
         public Cliente(string nombre, string documento, string foto, string telefono)
         {
-            //Comprobar si el id es autogenerado para saber si lo pongo en el constructor
             this.Nombre = nombre;
             this.Documento = documento;
             this.Foto = foto;
@@ -86,7 +85,11 @@ namespace ProyectoParking.ClasesModelo
 
         //Metodos
 
-
+        public void subirClienteDB()
+        {
+            //TODO hacer que un metodo del servicio de la BD agregue un cliente a la bd
+            
+        }
 
         public override string ToString()
         {
