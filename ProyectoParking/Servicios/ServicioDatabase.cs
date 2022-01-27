@@ -58,6 +58,7 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+        // Métodos para Insertar, Editar y Borrar un vehículo
         private static void InsertarVehiculo(Vehiculo vehiculo)
         {
             SqliteCommand comando = conexion.CreateCommand();
@@ -80,6 +81,26 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+        private static void EditarVehiculo(Vehiculo vehiculo)
+        {
+            SqliteCommand comando = conexion.CreateCommand();
+
+            comando.CommandText = "UPDATE vehiculos" +
+                                  "SET id_cliente = '" + vehiculo.IdMarca + "'," +
+                                       "matricula = '" + vehiculo.Matricula + "'," +
+                                       "id_marca = '" + vehiculo.IdMarca + "'," +
+                                       "modelo = '" + vehiculo.Modelo + "'," +
+                                       "tipo = '" + vehiculo.Tipo + "'" +
+                                   "WHERE id_vehiculo =" + vehiculo.IdVehiculo;
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
+        }
+        private static void EliminarVehiculo()
+        {
+
+        }
         private static void InsertarDatosClientes()
         {
             SqliteCommand comando = conexion.CreateCommand();
