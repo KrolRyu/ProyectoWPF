@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.Sqlite;
+using ProyectoParking.ClasesModelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace ProyectoParking.Servicios
                                         edad       INTEGER,
                                         genero     TEXT,
                                         telefono   TEXT)";
-            comando.ExecuteNonQuery(); 
+            comando.ExecuteNonQuery();
 
             comando.CommandText = @"CREATE TABLE IF NOT EXISTS vehiculos (
                                         id_vehiculo INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -56,6 +57,29 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexión
             conexion.Close();
         }
+
+        private static void InsertarVehiculo(Vehiculo vehiculo)
+        {
+            SqliteCommand comando = conexion.CreateCommand();
+            comando.CommandText = "insert into vehiculos (id_cliente, matricula, id_marca, modelo, tipo) VALUES (@id_cliente, @matricula, @id_marca, @modelo, @tipo);";
+            comando.Parameters.Add("@id_cliente", SqliteType.Integer);
+            comando.Parameters.Add("@matricula", SqliteType.Text);
+            comando.Parameters.Add("@id_marca", SqliteType.Integer);
+            comando.Parameters.Add("@modelo", SqliteType.Text);
+            comando.Parameters.Add("@tipo", SqliteType.Text);
+
+            comando.Parameters["@id_cliente"].Value = vehiculo.IdCliente;
+            comando.Parameters["@matricula"].Value = vehiculo.Matricula;
+            comando.Parameters["@id_marca"].Value = vehiculo.IdMarca;
+            comando.Parameters["@modelo"].Value = vehiculo.Modelo;
+            comando.Parameters["@tipo"].Value = vehiculo.Tipo;
+
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
+        }
+
         private static void InsertarDatosClientes()
         {
             SqliteCommand comando = conexion.CreateCommand();
