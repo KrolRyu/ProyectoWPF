@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoParking.vistamodelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace ProyectoParking.vistas
     /// </summary>
     public partial class Clientes : UserControl
     {
+        private ClientesVM vm = new ClientesVM();
         public Clientes()
         {
             InitializeComponent();
+            DataContext = vm;
         }
     }
 }
