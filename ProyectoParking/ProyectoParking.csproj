@@ -157,9 +157,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Servicios\DatabaseService.cs" />
-	  <Compile Include="Servicios\ServicioComprobarCara.cs" />
+    <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioImgs.cs" />
     <Compile Include="MainWindowVM.cs" />
+    <Compile Include="vistamodelo\Class1.cs" />
     <Compile Include="vistas\Clientes.xaml.cs">
       <DependentUpon>Clientes.xaml</DependentUpon>
     </Compile>
@@ -231,10 +232,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="servicios\" />
-    <Folder Include="vistamodelo\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="img\car.png" />
     <Resource Include="img\parking.png" />

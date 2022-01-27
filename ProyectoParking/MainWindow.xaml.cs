@@ -28,7 +28,7 @@ namespace ProyectoParking
         }
 
         private void navigationDrawer_ItemClicked(object sender, Syncfusion.UI.Xaml.NavigationDrawer.NavigationItemClickedEventArgs e)
-        {
+        {            
             switch ((sender as Button).Tag)
             {
                 case "Clientes":

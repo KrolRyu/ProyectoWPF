@@ -22,7 +22,7 @@ namespace ProyectoParking.vistas
     {
         public Estacionamientos()
         {
-            
+            InitializeComponent();
         }
     }
 }
