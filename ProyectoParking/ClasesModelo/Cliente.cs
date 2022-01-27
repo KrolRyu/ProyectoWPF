@@ -1,9 +1,11 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static ProyectoParking.Servicios.ServicioComprobarCara;
 
 namespace ProyectoParking.ClasesModelo
 {
@@ -70,20 +72,24 @@ namespace ProyectoParking.ClasesModelo
         //Constructores
         public Cliente() { }
 
-        public Cliente(string nombre, string documento, string foto, int edad, string genero, string telefono)
+        public Cliente(string nombre, string documento, string foto, string telefono)
         {
-            //Comprobar si el id es autogenerado para saber si lo pongo en el constructor
             this.Nombre = nombre;
             this.Documento = documento;
             this.Foto = foto;
-            this.Edad = edad;
-            this.Genero = genero;
+            FaceAttributes respuesta = ServicioComprobarCara.ComprobarCara(foto);
+            this.Edad = (int)respuesta.age;
+            this.Genero = respuesta.gender;
             this.Telefono = telefono;
         }
 
         //Metodos
 
-
+        public void subirClienteDB()
+        {
+            //TODO hacer que un metodo del servicio de la BD agregue un cliente a la bd
+            
+        }
 
         public override string ToString()
         {

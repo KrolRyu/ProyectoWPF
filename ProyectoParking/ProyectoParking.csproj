@@ -154,6 +154,7 @@
     <Compile Include="servicios\ServicioDatabase.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
+    <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioImgs.cs" />
     <Compile Include="vistamodelo\ClientesVM.cs" />
     <Compile Include="vistamodelo\EstacionamientosVM.cs" />
@@ -230,8 +231,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
   <ItemGroup />
   <ItemGroup />
   <ItemGroup>

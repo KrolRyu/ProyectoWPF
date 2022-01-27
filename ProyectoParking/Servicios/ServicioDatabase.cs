@@ -14,7 +14,7 @@ namespace ProyectoParking.Servicios
 
         //Crea una conexión al fichero de base de datos parking.db
         //Si no existe, lo creará
-        static SqliteConnection conexion = new SqliteConnection("Data Source=C:/ProyectoParking/database/3parking.db");
+        static SqliteConnection conexion = new SqliteConnection("Data Source=C:/ProyectoParking/database/parking.db");
         public static void ConnectDatabase()
         {
             //Abre la conexión con la base de datos
