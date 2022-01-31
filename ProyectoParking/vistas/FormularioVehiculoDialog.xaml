@@ -8,7 +8,16 @@
         mc:Ignorable="d"
         Title="FormularioVehiculoDialog" Height="450" Width="800">
     <StackPanel>
-        <inputLayout:SfTextInputLayout Hint="Name">
+        <inputLayout:SfTextInputLayout Hint="ID Cliente"
+                                      HintFloatMode="Float">
+            <inputLayout:SfTextInputLayout.LeadingView>
+                <Image Source="/img/face-detection.png" />
+            </inputLayout:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding Path=PersonaActual.IdCliente}" />
+        </inputLayout:SfTextInputLayout>
+
+
+        <inputLayout:SfTextInputLayout Hint="Nombre">
             <TextBox />
         </inputLayout:SfTextInputLayout>
     </StackPanel>
