@@ -63,6 +63,7 @@ namespace ProyectoParking.Servicios
         // Métodos para Insertar, Editar y Borrar un vehículo
         private static void InsertarVehiculo(Vehiculo vehiculo)
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
             comando.CommandText = "insert into vehiculos (id_cliente, matricula, id_marca, modelo, tipo) VALUES (@id_cliente, @matricula, @id_marca, @modelo, @tipo);";
             comando.Parameters.Add("@id_cliente", SqliteType.Integer);
@@ -85,6 +86,7 @@ namespace ProyectoParking.Servicios
 
         private static void EditarVehiculo(Vehiculo vehiculo)
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
 
             comando.CommandText = "UPDATE vehiculos" +
@@ -101,6 +103,7 @@ namespace ProyectoParking.Servicios
         }
         private static void EliminarVehiculo(Vehiculo vehiculo)
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
 
             comando.CommandText = "DELETE vehiculos " +
@@ -112,6 +115,7 @@ namespace ProyectoParking.Servicios
         }
         public static ObservableCollection<Cliente> GetClientes()
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
             comando.CommandText = "SELECT * FROM clientes";
             SqliteDataReader lector = comando.ExecuteReader();

@@ -178,6 +178,9 @@
     <Compile Include="vistas\Estacionamientos.xaml.cs">
       <DependentUpon>Estacionamientos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="vistas\FormularioClienteDialog.xaml.cs">
+      <DependentUpon>FormularioClienteDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="vistas\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
@@ -204,6 +207,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="vistas\Estacionamientos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\FormularioClienteDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
