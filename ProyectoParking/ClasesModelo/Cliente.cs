@@ -85,7 +85,7 @@ namespace ProyectoParking.ClasesModelo
 
         public Cliente(int id, string nombre, string documento, string foto, int edad, string genero, string telefono)
         {
-            this.idCliente = id;
+            this.IdCliente = id;
             this.Nombre = nombre;
             this.Documento = documento;
             this.Foto = foto;
@@ -93,13 +93,8 @@ namespace ProyectoParking.ClasesModelo
             this.Genero = genero;
             this.Telefono = telefono;
         }
-        //Metodos
 
-        public void subirClienteDB()
-        {
-            //TODO hacer que un metodo del servicio de la BD agregue un cliente a la bd
-            
-        }
+        //Metodos
 
         public override string ToString()
         {

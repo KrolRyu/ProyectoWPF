@@ -28,8 +28,8 @@
                 <Image Source="/img/remove.png"></Image>
             </Button>
         </StackPanel>
-        
-        <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Clientes}"/> <!-- Clientes recupera todos los clientes en la VM de Cliente-->
+
+        <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Path=Clientes}" SelectedItem="{Binding Path=ClienteSel}"/> <!-- Clientes recupera todos los clientes en la VM de Cliente-->
         
     </DockPanel>
 </UserControl>
