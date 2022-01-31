@@ -83,13 +83,17 @@ namespace ProyectoParking.ClasesModelo
             this.Telefono = telefono;
         }
 
-        //Metodos
-
-        public void subirClienteDB()
+        public Cliente(string nombre, string documento, string foto, int edad, string genero, string telefono)
         {
-            //TODO hacer que un metodo del servicio de la BD agregue un cliente a la bd
-            
+            this.Nombre = nombre;
+            this.Documento = documento;
+            this.Foto = foto;
+            this.Edad = edad;
+            this.Genero = genero;
+            this.Telefono = telefono;
         }
+
+        //Metodos
 
         public override string ToString()
         {

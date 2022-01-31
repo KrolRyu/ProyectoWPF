@@ -13,8 +13,8 @@ namespace ProyectoParking.Servicios
         public static FaceAttributes ComprobarCara(string imagen)
         {
             var response = PostCara(imagen);
-            Root respuesta = JsonConvert.DeserializeObject<Root>(response.Content);
-            return respuesta.faceAttributes;
+            Root[] respuesta = JsonConvert.DeserializeObject<Root[]>(response.Content);
+            return respuesta[0].faceAttributes;
         }
 
         public static IRestResponse PostCara(string imagen)
@@ -23,10 +23,10 @@ namespace ProyectoParking.Servicios
             //Con la version 1.0 funciona, probar el lunes con el proyecto de consola si va
             var client = new RestClient("https://servicio-face-proyecto-parking.cognitiveservices.azure.com/face/v1.0/");
             var request = new RestRequest("detect", Method.POST);
-            string data = "{ 'url':'[" + imagen + "]'}";
+            string data = "{ 'url':'" + imagen + "'}";
             request.AddHeader("Ocp-Apim-Subscription-Key", "38cac79a9bd04f648466d0b24ad1d9f5");
             request.AddHeader("Content-Type", "application/json");
-            request.AddParameter("application/json", data, ParameterType.RequestBody);
+            request.AddJsonBody(data);
             request.AddParameter("returnFaceAttributes", "age, gender", ParameterType.QueryString);
             var response = client.Execute(request);
             return response;
