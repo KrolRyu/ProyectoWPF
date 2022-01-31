@@ -91,7 +91,7 @@ namespace ProyectoParking.Servicios
             SqliteCommand comando = conexion.CreateCommand();
 
             comando.CommandText = "UPDATE vehiculos" +
-                                  "SET id_cliente = '" + vehiculo.IdMarca + "'," +
+                                  "SET id_cliente = '" + vehiculo.IdCliente + "'," +
                                        "matricula = '" + vehiculo.Matricula + "'," +
                                        "id_marca = '" + vehiculo.IdMarca + "'," +
                                        "modelo = '" + vehiculo.Modelo + "'," +
@@ -198,6 +198,7 @@ namespace ProyectoParking.Servicios
 
         public static void InsertarCliente(Cliente cliente)
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
             comando.CommandText = "insert into cliente (id_cliente, nombre, documento, foto, edad, genero, telefono) VALUES (@id_cliente, @nombre, @documento, @foto, @edad, @genero, @telefono);";
             comando.Parameters.Add("@id_cliente", SqliteType.Integer);
@@ -224,6 +225,7 @@ namespace ProyectoParking.Servicios
 
         public static void EditarCliente(Cliente cliente)
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
 
             comando.CommandText = "UPDATE clientes" +
@@ -243,6 +245,7 @@ namespace ProyectoParking.Servicios
 
         public static void EliminarCliente(Cliente cliente)
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
 
             comando.CommandText = "DELETE clientes " +
