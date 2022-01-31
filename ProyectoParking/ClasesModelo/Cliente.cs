@@ -83,6 +83,16 @@ namespace ProyectoParking.ClasesModelo
             this.Telefono = telefono;
         }
 
+        public Cliente(int id, string nombre, string documento, string foto, int edad, string genero, string telefono)
+        {
+            this.idCliente = id;
+            this.Nombre = nombre;
+            this.Documento = documento;
+            this.Foto = foto;
+            this.Edad = edad;
+            this.Genero = genero;
+            this.Telefono = telefono;
+        }
         //Metodos
 
         public void subirClienteDB()
