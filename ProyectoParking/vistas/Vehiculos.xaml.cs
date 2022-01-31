@@ -27,5 +27,19 @@ namespace ProyectoParking.vistas
             InitializeComponent();
             DataContext = vm;
         }
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.AñadirVehiculo();
+        }
+
+        private void EditButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.EditarVehiculo();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.EliminarVehiculo();
+        }
     }
 }

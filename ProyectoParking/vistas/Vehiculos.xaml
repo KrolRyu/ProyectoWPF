@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ProyectoParking.vistas.Vehiculos"
+﻿<UserControl xmlns:syncfusion="http://schemas.syncfusion.com/wpf"  x:Class="ProyectoParking.vistas.Vehiculos"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,30 @@
              xmlns:local="clr-namespace:ProyectoParking.vistas"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontSize="30" FontFamily="Kiona">VEHICULOS</TextBlock>
-    </Grid>
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="Margin" Value="0,0,10,10"></Setter>
+            <Setter Property="Width" Value="Auto"></Setter>
+            <Setter Property="Height" Value="35"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel >
+        <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="30" FontFamily="Kiona">VEHICULOS</TextBlock>
+        <StackPanel DockPanel.Dock="Right" VerticalAlignment="Bottom">
+            <Button Click="AddButton_Click">
+                <Image Source="/img/plus.png"></Image>
+            </Button>
+            <Button Height="40" Click="EditButton_Click">
+                <Image Source="/img/edit.png"></Image>
+            </Button>
+            <Button Click="DeleteButton_Click">
+                <Image Source="/img/remove.png"></Image>
+            </Button>
+        </StackPanel>
+
+        <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Path=Vehiculos}" SelectedItem="{Binding Path=VehiculoSel}"/>
+
+    </DockPanel>
 </UserControl>

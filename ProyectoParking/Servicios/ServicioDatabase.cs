@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using ProyectoParking.ClasesModelo;
+using ProyectoParking.vistamodelo;
 using ProyectoParking.vistas;
 using System;
 using System.Collections.Generic;
@@ -61,7 +62,7 @@ namespace ProyectoParking.Servicios
         }
 
         // Métodos para Insertar, Editar y Borrar un vehículo
-        private static void InsertarVehiculo(Vehiculo vehiculo)
+        public static void InsertarVehiculo(Vehiculo vehiculo)
         {
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
@@ -84,7 +85,7 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
-        private static void EditarVehiculo(Vehiculo vehiculo)
+        public static void EditarVehiculo(Vehiculo vehiculo)
         {
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
@@ -101,7 +102,7 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexión
             conexion.Close();
         }
-        private static void EliminarVehiculo(Vehiculo vehiculo)
+        public static void EliminarVehiculo(Vehiculo vehiculo)
         {
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
