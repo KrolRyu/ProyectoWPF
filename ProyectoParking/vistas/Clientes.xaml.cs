@@ -40,7 +40,7 @@ namespace ProyectoParking.vistas
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            vm.EliminarCliente();
         }
     }
 }

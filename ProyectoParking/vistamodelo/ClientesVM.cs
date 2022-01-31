@@ -20,9 +20,32 @@ namespace ProyectoParking.vistamodelo
             set { SetProperty(ref clientes, value); }
         }
 
+        private Cliente clienteSel;
+
+        public Cliente ClienteSel
+        {
+            get { return clienteSel; }
+            set { SetProperty(ref clienteSel, value); }
+        }
+
         public ClientesVM()
         {
-            Clientes = ServicioDatabase
+            Clientes = ServicioDatabase.GetClientes();
+        }
+
+        public void AñadirCliente()
+        {
+            ServicioDatabase.InsertarCliente();
+        }
+
+        public void EditarCliente()
+        {
+            ServicioDatabase.EditarCliente(ClienteSel);
+        }
+
+        public void EliminarCliente()
+        {
+            ServicioDatabase.EliminarCliente(ClienteSel);
         }
     }
 }
