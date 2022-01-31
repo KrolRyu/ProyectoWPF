@@ -97,9 +97,16 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexión
             conexion.Close();
         }
-        private static void EliminarVehiculo()
+        private static void EliminarVehiculo(Vehiculo vehiculo)
         {
+            SqliteCommand comando = conexion.CreateCommand();
 
+            comando.CommandText = "DELETE vehiculos " +
+                                   "WHERE id_vehiculo =" + vehiculo.IdVehiculo;
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
         }
         private static void InsertarDatosClientes()
         {
