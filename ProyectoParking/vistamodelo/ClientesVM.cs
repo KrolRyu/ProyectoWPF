@@ -35,7 +35,7 @@ namespace ProyectoParking.vistamodelo
 
         public void AñadirCliente()
         {
-            ServicioDatabase.InsertarCliente();
+            //ServicioDatabase.InsertarCliente(/* new Cliente con los datos de la ventana de añadir */);
         }
 
         public void EditarCliente()
