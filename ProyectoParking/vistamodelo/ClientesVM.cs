@@ -22,7 +22,6 @@ namespace ProyectoParking.vistamodelo
 
         public ClientesVM()
         {
-            Clientes = ServicioDatabase
         }
     }
 }
