@@ -35,7 +35,7 @@ namespace ProyectoParking.vistamodelo
 
         public void AñadirVehiculo()
         {
-            ServicioDatabase.InsertarVehiculo();
+            //ServicioDatabase.InsertarVehiculo(/* new Vehiculo con los datos de la ventana de añadir */);
         }
 
         public void EditarVehiculo()

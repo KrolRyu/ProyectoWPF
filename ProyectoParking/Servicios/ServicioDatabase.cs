@@ -143,6 +143,34 @@ namespace ProyectoParking.Servicios
 
             return listaClientes;
         }
+        public static ObservableCollection<Vehiculo> GetVehiculos()
+        {
+            conexion.Open();
+            SqliteCommand comando = conexion.CreateCommand();
+            comando.CommandText = "SELECT * FROM vehiculos";
+            SqliteDataReader lector = comando.ExecuteReader();
+            ObservableCollection<Vehiculo> listaVehiculos = new ObservableCollection<Vehiculo>();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    int idVehiculo = lector.GetInt32(0);
+                    int idCliente = lector.GetInt32(1);
+                    string matricula = lector.GetString(2);
+                    int idMarca = lector.GetInt32(4);
+                    string modelo = lector.GetString(5);
+                    string tipo = lector.GetString(6);
+                    listaVehiculos.Add(new Vehiculo(idVehiculo, idCliente, matricula, idMarca, modelo, tipo));
+                }
+            }
+
+            lector.Close();
+
+            //Cerramos la conexión
+            conexion.Close();
+
+            return listaVehiculos;
+        }
         private static void InsertarDatosClientes()
         {
             SqliteCommand comando = conexion.CreateCommand();
