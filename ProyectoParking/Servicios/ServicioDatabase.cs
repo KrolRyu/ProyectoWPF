@@ -1,7 +1,9 @@
 ﻿using Microsoft.Data.Sqlite;
 using ProyectoParking.ClasesModelo;
+using ProyectoParking.vistas;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -97,9 +99,44 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexión
             conexion.Close();
         }
-        private static void EliminarVehiculo()
+        private static void EliminarVehiculo(Vehiculo vehiculo)
         {
+            SqliteCommand comando = conexion.CreateCommand();
 
+            comando.CommandText = "DELETE vehiculos " +
+                                   "WHERE id_vehiculo =" + vehiculo.IdVehiculo;
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
+        }
+        public static ObservableCollection<Cliente> GetClientes()
+        {
+            SqliteCommand comando = conexion.CreateCommand();
+            comando.CommandText = "SELECT * FROM clientes";
+            SqliteDataReader lector = comando.ExecuteReader();
+            ObservableCollection<Cliente> listaClientes = new ObservableCollection<Cliente>();
+            if(lector.HasRows)
+            {
+                while(lector.Read())
+                {
+                    int id = lector.GetInt32(0);
+                    string nombre = lector.GetString(1);
+                    string documento = lector.GetString(2);
+                    string foto = lector.GetString(3);
+                    int edad = lector.GetInt32(4);
+                    string genero = lector.GetString(5);
+                    string telefono = lector.GetString(6);
+                    listaClientes.Add(new Cliente(id, nombre, documento, foto, edad, genero, telefono));
+                }
+            }
+
+            lector.Close();
+
+            //Cerramos la conexión
+            conexion.Close();
+
+            return listaClientes;
         }
         private static void InsertarDatosClientes()
         {
