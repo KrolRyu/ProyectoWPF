@@ -6,11 +6,29 @@
              xmlns:local="clr-namespace:ProyectoParking.vistas"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="BorderBrush" Value="Transparent"></Setter>
+            <Setter Property="Margin" Value="0,0,10,10"></Setter>
+            <Setter Property="Width" Value="Auto"></Setter>
+            <Setter Property="Height" Value="35"></Setter>
+        </Style>
+    </UserControl.Resources>
     <DockPanel >
         <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="30" FontFamily="Kiona">CLIENTES</TextBlock>
-        <Button DockPanel.Dock="Right" Width="50" Height="20" VerticalAlignment="Bottom" Margin="10">
-            <Image Source="img/remove.png"></Image>
-        </Button>
+        <StackPanel DockPanel.Dock="Right" VerticalAlignment="Bottom">
+            <Button Click="AddButton_Click">
+                <Image Source="/img/plus.png"></Image>
+            </Button>
+            <Button Height="40" Click="EditButton_Click">
+                <Image Source="/img/edit.png"></Image>
+            </Button>
+            <Button Click="DeleteButton_Click">
+                <Image Source="/img/remove.png"></Image>
+            </Button>
+        </StackPanel>
+        
         <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Clientes}"/> <!-- Clientes recupera todos los clientes en la VM de Cliente-->
         
     </DockPanel>
