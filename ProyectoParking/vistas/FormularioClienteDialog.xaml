@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoParking.vistas"
         mc:Ignorable="d"
-        Title="FormularioClienteDialog" Height="450" Width="800">
-    <StackPanel>
+        Icon="/img/usuario.png"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        Title="Añadir/Editar Cliente"
+        Height="450" Width="800">
+    <StackPanel Margin="20">
+        <!-- InputLayout para el id del Cliente (No editable) -->
+        <syncfusion:SfTextInputLayout 
+                Hint="ID Cliente"
+                HintFloatMode="Float">
+            <syncfusion:SfTextInputLayout.LeadingView>
+                <Image Source="/img/face-detection.png" />
+            </syncfusion:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding Path=PersonaActual.IdCliente}" />
+        </syncfusion:SfTextInputLayout>
+        
         <!-- InputLayout para el nombre del Cliente -->
         <syncfusion:SfTextInputLayout 
             Hint="Nombre"
@@ -16,6 +31,39 @@
                 <Image Source="/img/usuario.png" />
             </syncfusion:SfTextInputLayout.LeadingView>
             <TextBox Text="{Binding Path=PersonaActual.Nombre}" />
+        </syncfusion:SfTextInputLayout>
+        
+        <!-- InputLayout para el DNI del Cliente -->
+        <syncfusion:SfTextInputLayout 
+            Hint="DNI"
+                HintFloatMode="Float"
+                HelperText="Introduce el DNI">
+            <syncfusion:SfTextInputLayout.LeadingView>
+                <Image Source="/img/dni.ico" />
+            </syncfusion:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding Path=PersonaActual.Documento}" />
+        </syncfusion:SfTextInputLayout>
+
+        <!-- InputLayout para la foto del Cliente -->
+        <syncfusion:SfTextInputLayout 
+                Hint="Foto"
+                HintFloatMode="Float"
+                HelperText="Introduce una foto de la cara del cliente">
+            <syncfusion:SfTextInputLayout.LeadingView>
+                <Image Source="/img/camera.png" />
+            </syncfusion:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding Path=PersonaActual.Foto}" />
+        </syncfusion:SfTextInputLayout>
+        
+        <!-- InputLayout para el telefono del Cliente -->
+        <syncfusion:SfTextInputLayout 
+                Hint="Teléfono"
+                HintFloatMode="Float"
+                HelperText="Introduce el teléfono">
+            <syncfusion:SfTextInputLayout.LeadingView>
+                <Image Source="/img/phone-call.png" />
+            </syncfusion:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding Path=PersonaActual.Telefono}" />
         </syncfusion:SfTextInputLayout>
     </StackPanel>
 </Window>
