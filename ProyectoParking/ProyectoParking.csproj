@@ -184,6 +184,9 @@
     <Compile Include="vistas\FormularioClienteDialog.xaml.cs">
       <DependentUpon>FormularioClienteDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="vistas\FormularioVehiculoDialog.xaml.cs">
+      <DependentUpon>FormularioVehiculoDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="vistas\Inicio.xaml.cs">
       <DependentUpon>Inicio.xaml</DependentUpon>
     </Compile>
@@ -214,6 +217,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="vistas\FormularioClienteDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\FormularioVehiculoDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
