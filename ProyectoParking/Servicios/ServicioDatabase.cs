@@ -160,5 +160,64 @@ namespace ProyectoParking.Servicios
             comando.ExecuteNonQuery();
 
         }
+
+        //metodos insertar, editar y borrrar un cliente
+
+        public static void InsertarCliente(Cliente cliente)
+        {
+            SqliteCommand comando = conexion.CreateCommand();
+            comando.CommandText = "insert into cliente (id_cliente, nombre, documento, foto, edad, genero, telefono) VALUES (@id_cliente, @nombre, @documento, @foto, @edad, @genero, @telefono);";
+            comando.Parameters.Add("@id_cliente", SqliteType.Integer);
+            comando.Parameters.Add("@nombre", SqliteType.Text);
+            comando.Parameters.Add("@documento", SqliteType.Text);
+            comando.Parameters.Add("@foto", SqliteType.Text);
+            comando.Parameters.Add("@edad", SqliteType.Integer);
+            comando.Parameters.Add("@genero", SqliteType.Text);
+            comando.Parameters.Add("@telefono", SqliteType.Text);
+
+            comando.Parameters["@id_cliente"].Value = cliente.IdCliente;
+            comando.Parameters["@nombre"].Value = cliente.Nombre;
+            comando.Parameters["@documento"].Value = cliente.Documento;
+            comando.Parameters["@foto"].Value = cliente.Foto;
+            comando.Parameters["@edad"].Value = cliente.Edad;
+            comando.Parameters["@genero"].Value = cliente.Genero;
+            comando.Parameters["@telefono"].Value = cliente.Telefono;
+
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
+        }
+
+        public static void EditarCliente(Cliente cliente)
+        {
+            SqliteCommand comando = conexion.CreateCommand();
+
+            comando.CommandText = "UPDATE clientes" +
+                                  "SET id_cliente = '" + cliente.IdCliente + "'," +
+                                       "nombre = '" + cliente.Nombre + "'," +
+                                       "documento = '" + cliente.Documento + "'," +
+                                       "foto = '" + cliente.Foto + "'," +
+                                       "edad = '" + cliente.Edad + "'" +
+                                       "genero = '" + cliente.Genero +"'" +
+                                       "telefono = '" + cliente.Telefono +"'" +
+                                   "WHERE id_cliente =" + cliente.IdCliente;
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
+        }
+
+        public static void EliminarCliente(Cliente cliente)
+        {
+            SqliteCommand comando = conexion.CreateCommand();
+
+            comando.CommandText = "DELETE clientes " +
+                                   "WHERE id_cliente =" + cliente.IdCliente;
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
+        }
     }
 }

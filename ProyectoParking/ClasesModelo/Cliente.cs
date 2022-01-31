@@ -83,8 +83,9 @@ namespace ProyectoParking.ClasesModelo
             this.Telefono = telefono;
         }
 
-        public Cliente(string nombre, string documento, string foto, int edad, string genero, string telefono)
+        public Cliente(int id, string nombre, string documento, string foto, int edad, string genero, string telefono)
         {
+            this.IdCliente = id;
             this.Nombre = nombre;
             this.Documento = documento;
             this.Foto = foto;
