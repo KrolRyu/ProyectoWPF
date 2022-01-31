@@ -29,7 +29,7 @@
             </Button>
         </StackPanel>
 
-        <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Path=Clientes}" SelectedItem="{Binding Path=ClienteSel}"/> <!-- Clientes recupera todos los clientes en la VM de Cliente-->
-        
+        <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Path=Clientes}" SelectedItem="{Binding Path=ClienteSel}"/>
+
     </DockPanel>
 </UserControl>

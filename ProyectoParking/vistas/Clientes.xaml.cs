@@ -30,12 +30,12 @@ namespace ProyectoParking.vistas
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-
+            vm.AñadirCliente();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-
+            vm.EditarCliente();
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
