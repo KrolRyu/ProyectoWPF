@@ -9,7 +9,7 @@ using static ProyectoParking.Servicios.ServicioComprobarCara;
 
 namespace ProyectoParking.ClasesModelo
 {
-    class Cliente: ObservableObject
+    public class Cliente: ObservableObject
     {
 
         //Propiedades

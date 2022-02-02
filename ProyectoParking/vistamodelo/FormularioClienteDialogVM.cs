@@ -13,6 +13,14 @@ namespace ProyectoParking.vistamodelo
 {
     class FormularioClienteDialogVM : ObservableObject
     {
+        private bool edit;
+
+        public bool Edit
+        {
+            get { return edit; }
+            set { SetProperty(ref edit, value); }
+        }
+
         private string rutaImagen;
 
         public string RutaImagen
@@ -29,7 +37,6 @@ namespace ProyectoParking.vistamodelo
             set { SetProperty(ref clienteSel, value); }
         }
 
-
         public FormularioClienteDialogVM()
         {
             ClienteSel = new Cliente();
@@ -44,7 +51,11 @@ namespace ProyectoParking.vistamodelo
 
         public void InsertarCliente()
         {
-            ServicioDatabase.InsertarCliente(new Cliente(ClienteSel.Nombre, ClienteSel.Documento, ClienteSel.Foto, ClienteSel.Telefono));
+            if (Edit){
+                ServicioDatabase.EditarCliente(ClienteSel);
+            }else {
+                ServicioDatabase.InsertarCliente(new Cliente(ClienteSel.Nombre, ClienteSel.Documento, ClienteSel.Foto, ClienteSel.Telefono));
+            }           
             //ClientesVM.RecargarDataGrid(); TODO: Conseguir que se recargue el datagrid despues de insertar
 
         }

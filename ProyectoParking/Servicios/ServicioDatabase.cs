@@ -226,7 +226,7 @@ namespace ProyectoParking.Servicios
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
 
-            comando.CommandText = "UPDATE clientes" +
+            comando.CommandText = "UPDATE clientes " +
                                   "SET id_cliente = '" + cliente.IdCliente + "'," +
                                        "nombre = '" + cliente.Nombre + "'," +
                                        "documento = '" + cliente.Documento + "'," +

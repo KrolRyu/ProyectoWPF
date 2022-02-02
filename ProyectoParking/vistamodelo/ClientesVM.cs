@@ -42,7 +42,7 @@ namespace ProyectoParking.vistamodelo
 
         public void EditarCliente()
         {
-            //ServicioDatabase.EditarCliente(ClienteSel);
+            ServicioNavegacion.AbrirFormularioCliente(ClienteSel, true);
         }
 
         public void EliminarCliente()

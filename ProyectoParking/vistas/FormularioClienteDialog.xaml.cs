@@ -1,4 +1,5 @@
-﻿using ProyectoParking.servicios;
+﻿using ProyectoParking.ClasesModelo;
+using ProyectoParking.servicios;
 using ProyectoParking.vistamodelo;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,13 @@ namespace ProyectoParking.vistas
         {
             InitializeComponent();
             DataContext = vm;
+        }
+        public FormularioClienteDialog(Cliente clienteSel, bool edit)
+        {
+            InitializeComponent();
+            DataContext = vm;
+            vm.ClienteSel = clienteSel;
+            vm.Edit = edit;
         }
 
         private void ButtonAdv_Click(object sender, RoutedEventArgs e)
