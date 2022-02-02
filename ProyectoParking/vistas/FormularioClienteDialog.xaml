@@ -10,23 +10,35 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
         Title="Añadir/Editar Cliente"
-        Height="450" Width="800">
+        Height="550" Width="570">
+
+    <Window.Resources>
+
+        <Style x:Key="EstiloInputLayout" TargetType="syncfusion:SfTextInputLayout">
+            <Setter Property="Margin" Value="10" />
+        </Style>    
+        
+    </Window.Resources>
+    
+    
     <StackPanel Margin="20">
         <!-- InputLayout para el id del Cliente (No editable) -->
         <syncfusion:SfTextInputLayout 
                 Hint="ID Cliente"
-                HintFloatMode="Float">
+                HintFloatMode="Float"
+                Style="{StaticResource EstiloInputLayout}">
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/face-detection.png" />
             </syncfusion:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=ClienteSel.IdCliente}" IsReadOnly="True"/>
+            <TextBox Text="{Binding Path=ClienteSel.IdCliente}" IsEnabled="False"/>
         </syncfusion:SfTextInputLayout>
         
         <!-- InputLayout para el nombre del Cliente -->
         <syncfusion:SfTextInputLayout 
-            Hint="Nombre"
+                Hint="Nombre"
                 HintFloatMode="Float"
-                HelperText="Introduce el nombre">
+                HelperText="Introduce el nombre"
+                Style="{StaticResource EstiloInputLayout}">
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/usuario.png" />
             </syncfusion:SfTextInputLayout.LeadingView>
@@ -35,37 +47,49 @@
         
         <!-- InputLayout para el DNI del Cliente -->
         <syncfusion:SfTextInputLayout 
-            Hint="DNI"
+                Hint="DNI"
                 HintFloatMode="Float"
-                HelperText="Introduce el DNI">
+                HelperText="Introduce el DNI"
+                Style="{StaticResource EstiloInputLayout}">
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/dni.ico" />
             </syncfusion:SfTextInputLayout.LeadingView>
             <TextBox Text="{Binding Path=ClienteSel.Documento}" />
         </syncfusion:SfTextInputLayout>
 
-        <!-- InputLayout para la foto del Cliente -->
-        <syncfusion:SfTextInputLayout 
+
+        <StackPanel Orientation="Horizontal">
+            <!-- InputLayout para la foto del Cliente -->
+            <syncfusion:SfTextInputLayout 
                 Hint="Foto"
                 HintFloatMode="Float"
-                HelperText="Introduce una foto de la cara del cliente">
-            <syncfusion:SfTextInputLayout.LeadingView>
-                <Image Source="/img/camera.png" />
-            </syncfusion:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=ClienteSel.Foto}" />
-        </syncfusion:SfTextInputLayout>
-        
+                HelperText="Introduce una foto de la cara del cliente"
+                Style="{StaticResource EstiloInputLayout}"
+                >
+                <syncfusion:SfTextInputLayout.LeadingView>
+                    <Image Source="/img/camera.png" />
+                </syncfusion:SfTextInputLayout.LeadingView>
+                <TextBox Text="{Binding Path=ClienteSel.Foto}" />
+            </syncfusion:SfTextInputLayout>
+
+            <syncfusion:ButtonAdv Content="Examinar" Height="40" Margin="0,-17,0,0"  Label="Examinar" Width="100" Click="ButtonAdv_Click" />
+        </StackPanel>
         <!-- InputLayout para el telefono del Cliente -->
         <syncfusion:SfTextInputLayout 
                 Hint="Teléfono"
                 HintFloatMode="Float"
-                HelperText="Introduce el teléfono">
+                HelperText="Introduce el teléfono"
+                Style="{StaticResource EstiloInputLayout}">
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/phone-call.png" />
             </syncfusion:SfTextInputLayout.LeadingView>
             <TextBox Text="{Binding Path=ClienteSel.Telefono}" />
         </syncfusion:SfTextInputLayout>
         
+        <syncfusion:ButtonAdv Content="ButtonAdv" Height="40" Margin="10" Label="ButtonAdv" Width="100"/>
+
+
+
         <!-- TODO: botón submit -->
         
     </StackPanel>
