@@ -31,6 +31,7 @@ namespace ProyectoParking.vistamodelo
         public ClientesVM()
         {
             Clientes = ServicioDatabase.GetClientes();
+            ClienteSel = new Cliente();
         }
 
         public void AñadirCliente()
@@ -41,12 +42,13 @@ namespace ProyectoParking.vistamodelo
 
         public void EditarCliente()
         {
-            ServicioDatabase.EditarCliente(ClienteSel);
+            //ServicioDatabase.EditarCliente(ClienteSel);
         }
 
         public void EliminarCliente()
         {
             ServicioDatabase.EliminarCliente(ClienteSel);
+            Clientes = ServicioDatabase.GetClientes();
         }
     }
 }

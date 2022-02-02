@@ -69,7 +69,7 @@
                 <syncfusion:SfTextInputLayout.LeadingView>
                     <Image Source="/img/camera.png" />
                 </syncfusion:SfTextInputLayout.LeadingView>
-                <TextBox Text="{Binding Path=ClienteSel.Foto}" />
+                <TextBox Text="{Binding Path=RutaImagen}" />
             </syncfusion:SfTextInputLayout>
 
             <syncfusion:ButtonAdv Content="Examinar" Height="40" Margin="0,-17,0,0"  Label="Examinar" Width="100" Click="ButtonAdv_Click" />
@@ -86,7 +86,7 @@
             <TextBox Text="{Binding Path=ClienteSel.Telefono}" />
         </syncfusion:SfTextInputLayout>
         
-        <syncfusion:ButtonAdv Content="ButtonAdv" Height="40" Margin="10" Label="ButtonAdv" Width="100"/>
+        <syncfusion:ButtonAdv Content="ButtonAdv" Height="40" Margin="10" Label="Send" Width="100"/>
 
 
 
