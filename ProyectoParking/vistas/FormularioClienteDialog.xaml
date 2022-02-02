@@ -19,7 +19,7 @@
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/face-detection.png" />
             </syncfusion:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=PersonaActual.IdCliente}" />
+            <TextBox Text="{Binding Path=ClienteSel.IdCliente}" IsReadOnly="True"/>
         </syncfusion:SfTextInputLayout>
         
         <!-- InputLayout para el nombre del Cliente -->
@@ -30,7 +30,7 @@
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/usuario.png" />
             </syncfusion:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=PersonaActual.Nombre}" />
+            <TextBox Text="{Binding Path=ClienteSel.Nombre}" />
         </syncfusion:SfTextInputLayout>
         
         <!-- InputLayout para el DNI del Cliente -->
@@ -41,7 +41,7 @@
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/dni.ico" />
             </syncfusion:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=PersonaActual.Documento}" />
+            <TextBox Text="{Binding Path=ClienteSel.Documento}" />
         </syncfusion:SfTextInputLayout>
 
         <!-- InputLayout para la foto del Cliente -->
@@ -52,7 +52,7 @@
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/camera.png" />
             </syncfusion:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=PersonaActual.Foto}" />
+            <TextBox Text="{Binding Path=ClienteSel.Foto}" />
         </syncfusion:SfTextInputLayout>
         
         <!-- InputLayout para el telefono del Cliente -->
@@ -63,7 +63,10 @@
             <syncfusion:SfTextInputLayout.LeadingView>
                 <Image Source="/img/phone-call.png" />
             </syncfusion:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=PersonaActual.Telefono}" />
+            <TextBox Text="{Binding Path=ClienteSel.Telefono}" />
         </syncfusion:SfTextInputLayout>
+        
+        <!-- TODO: botón submit -->
+        
     </StackPanel>
 </Window>
