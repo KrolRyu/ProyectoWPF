@@ -200,8 +200,7 @@ namespace ProyectoParking.Servicios
         {
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
-            comando.CommandText = "insert into cliente (id_cliente, nombre, documento, foto, edad, genero, telefono) VALUES (@id_cliente, @nombre, @documento, @foto, @edad, @genero, @telefono);";
-            comando.Parameters.Add("@id_cliente", SqliteType.Integer);
+            comando.CommandText = "insert into clientes (nombre, documento, foto, edad, genero, telefono) VALUES (@nombre, @documento, @foto, @edad, @genero, @telefono);";
             comando.Parameters.Add("@nombre", SqliteType.Text);
             comando.Parameters.Add("@documento", SqliteType.Text);
             comando.Parameters.Add("@foto", SqliteType.Text);
@@ -209,7 +208,6 @@ namespace ProyectoParking.Servicios
             comando.Parameters.Add("@genero", SqliteType.Text);
             comando.Parameters.Add("@telefono", SqliteType.Text);
 
-            comando.Parameters["@id_cliente"].Value = cliente.IdCliente;
             comando.Parameters["@nombre"].Value = cliente.Nombre;
             comando.Parameters["@documento"].Value = cliente.Documento;
             comando.Parameters["@foto"].Value = cliente.Foto;
@@ -248,7 +246,7 @@ namespace ProyectoParking.Servicios
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
 
-            comando.CommandText = "DELETE clientes " +
+            comando.CommandText = "DELETE FROM clientes " +
                                    "WHERE id_cliente = " + cliente.IdCliente;
             comando.ExecuteNonQuery();
 

@@ -32,5 +32,10 @@ namespace ProyectoParking.vistas
         {
             vm.ExaminarImagen();
         }
+
+        private void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            vm.InsertarCliente();
+        }
     }
 }

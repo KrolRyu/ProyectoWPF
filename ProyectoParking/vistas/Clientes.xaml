@@ -19,7 +19,7 @@
         <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="30" FontFamily="Kiona">CLIENTES</TextBlock>
         <StackPanel DockPanel.Dock="Right" VerticalAlignment="Bottom">
             <Button Click="AddButton_Click">
-                <Image Source="/img/plus.png" MouseLeftButtonDown="Image_MouseLeftButtonDown"  ></Image>
+                <Image Source="/img/plus.png"></Image>
             </Button>
             <Button Height="40" Click="EditButton_Click">
                 <Image Source="/img/edit.png"></Image>

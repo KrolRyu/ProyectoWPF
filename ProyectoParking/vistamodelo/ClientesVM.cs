@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ProyectoParking.ClasesModelo;
+using ProyectoParking.servicios;
 using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
@@ -36,8 +37,7 @@ namespace ProyectoParking.vistamodelo
 
         public void AñadirCliente()
         {
-            //ServicioDatabase.InsertarCliente(/* new Cliente con los datos de la ventana de añadir */);
-            //TODO pasar este metodo y el de editar al VM de la vista del dialogo
+            ServicioNavegacion.AbrirFormularioCliente();
         }
 
         public void EditarCliente()
@@ -48,6 +48,10 @@ namespace ProyectoParking.vistamodelo
         public void EliminarCliente()
         {
             ServicioDatabase.EliminarCliente(ClienteSel);
+        }
+        
+        public void RecargarDataGrid()
+        {
             Clientes = ServicioDatabase.GetClientes();
         }
     }

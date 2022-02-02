@@ -44,10 +44,5 @@ namespace ProyectoParking.vistas
             vm.EliminarCliente();
         }
 
-        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ServicioNavegacion.AbrirFormularioCliente();
-
-        }
     }
 }
