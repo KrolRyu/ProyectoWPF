@@ -1,4 +1,5 @@
-﻿using ProyectoParking.vistamodelo;
+﻿using ProyectoParking.servicios;
+using ProyectoParking.vistamodelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,12 @@ namespace ProyectoParking.vistas
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             vm.EliminarCliente();
+        }
+
+        private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ServicioNavegacion.AbrirFormularioCliente();
+
         }
     }
 }

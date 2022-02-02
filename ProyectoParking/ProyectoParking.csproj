@@ -171,6 +171,7 @@
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioImgs.cs" />
+    <Compile Include="servicios\ServicioNavegacion.cs" />
     <Compile Include="vistamodelo\ClientesVM.cs" />
     <Compile Include="vistamodelo\EstacionamientosVM.cs" />
     <Compile Include="vistamodelo\InicioVM.cs" />
