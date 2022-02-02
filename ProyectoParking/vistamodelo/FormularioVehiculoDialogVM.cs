@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ProyectoParking.ClasesModelo;
+using ProyectoParking.servicios;
 using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace ProyectoParking.vistamodelo
 
         public void SacarMatriculaYTipo()
         {
-            //Cuando el servicio de subir imagen en fichero este hecho, recoger la imagen en la variable
+            FotoVehiculo = ServicioDialogos.ExaminarImagen();
             FotoVehiculo = ServicioImgs.SubirImagenAAzure(FotoVehiculo);
             if(FotoVehiculo != "")
             {

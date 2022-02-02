@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ProyectoParking.servicios;
+using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace ProyectoParking.vistamodelo
         public void ExaminarImagen()
         {
             RutaImagen = ServicioDialogos.ExaminarImagen();
+            RutaImagen = ServicioImgs.SubirImagenAAzure(RutaImagen);
         }
     }
 }
