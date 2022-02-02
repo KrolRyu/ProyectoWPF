@@ -249,7 +249,7 @@ namespace ProyectoParking.Servicios
             SqliteCommand comando = conexion.CreateCommand();
 
             comando.CommandText = "DELETE clientes " +
-                                   "WHERE id_cliente =" + cliente.IdCliente;
+                                   "WHERE id_cliente = " + cliente.IdCliente;
             comando.ExecuteNonQuery();
 
             //Cerramos la conexión

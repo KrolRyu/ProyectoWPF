@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoParking.vistamodelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,22 @@ namespace ProyectoParking.vistas
     /// </summary>
     public partial class FormularioVehiculoDialog : Window
     {
+        FormularioVehiculoDialogVM vm = new FormularioVehiculoDialogVM();
+
         public FormularioVehiculoDialog()
         {
+            DataContext = vm;
             InitializeComponent();
+        }
+
+        private void ButtonAdv_Click(object sender, RoutedEventArgs e)
+        {
+            vm.SacarMatriculaYTipo();
+        }
+
+        private void ButtonAdv_Click_1(object sender, RoutedEventArgs e)
+        {
+            vm.GuardarVehiculo();
         }
     }
 }
