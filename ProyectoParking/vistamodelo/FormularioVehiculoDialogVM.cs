@@ -30,10 +30,29 @@ namespace ProyectoParking.vistamodelo
             set { SetProperty(ref fotoVehiculo, value); }
         }
 
-        //Contructor
+        private bool nuevo;
+
+        public bool Nuevo
+        {
+            get { return nuevo; }
+            set { SetProperty(ref nuevo, value); }
+        }
+
+
+        //Contructores
+        //Contructor de crear
         public FormularioVehiculoDialogVM()
         {
             this.vehiculoActual = new Vehiculo();
+            nuevo = true;
+        }
+
+        //Constructor de editar
+        public FormularioVehiculoDialogVM(Vehiculo vehiculo)
+        {
+            this.vehiculoActual = vehiculo;
+            nuevo = false;
+
         }
 
         //Metodos
@@ -52,7 +71,19 @@ namespace ProyectoParking.vistamodelo
             }
             else
             {
-                //TODO usar el servicio de mensajes para que diga que ha habido un error
+                ServicioDialogos.ServicioMessageBox("Se ha producido un error subiendo la imagen", "ERROR", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+            }
+        }
+
+        public void GuardarVehiculo()
+        {
+            if (nuevo)
+            {
+                ServicioDatabase.InsertarVehiculo(vehiculoActual);
+            }
+            else
+            {
+                ServicioDatabase.EditarVehiculo(VehiculoActual);
             }
         }
 
