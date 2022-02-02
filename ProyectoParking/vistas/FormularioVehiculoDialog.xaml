@@ -4,21 +4,71 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:inputLayout="clr-namespace:Syncfusion.UI.Xaml.TextInputLayout;assembly=Syncfusion.SfTextInputLayout.WPF"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:local="clr-namespace:ProyectoParking.vistas"
         mc:Ignorable="d"
         Title="FormularioVehiculoDialog" Height="450" Width="800">
-    <StackPanel>
+    <StackPanel Margin="20">
+
+        <inputLayout:SfTextInputLayout Hint="ID Vehiculo"
+                                       HintFloatMode="Float">
+            <inputLayout:SfTextInputLayout.LeadingView>
+                <Image Source="/img/car.png" />
+            </inputLayout:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding Path=VehiculoActual.IdVehiculo}"/>
+        </inputLayout:SfTextInputLayout>
+
         <inputLayout:SfTextInputLayout Hint="ID Cliente"
-                                      HintFloatMode="Float">
+                                       HintFloatMode="Float">
             <inputLayout:SfTextInputLayout.LeadingView>
                 <Image Source="/img/face-detection.png" />
             </inputLayout:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=PersonaActual.IdCliente}" />
+            <TextBox Text="{Binding Path=VehiculoActual.IdCliente}" />
         </inputLayout:SfTextInputLayout>
 
-
-        <inputLayout:SfTextInputLayout Hint="Nombre">
-            <TextBox />
+        <inputLayout:SfTextInputLayout Hint="ID Marca"
+                                       HintFloatMode="Float"
+                                       HelperText="Introduce el id de la marca">
+            <inputLayout:SfTextInputLayout.LeadingView>
+                <Image Source="/img/id.png" />
+            </inputLayout:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding Path=VehiculoActual.IdMarca}" />
         </inputLayout:SfTextInputLayout>
+
+        <inputLayout:SfTextInputLayout Hint="Modelo"
+                                       HintFloatMode="Float"
+                                       HelperText="Introduce el modelo del vehículo">
+            <inputLayout:SfTextInputLayout.LeadingView>
+                <Image Source="/img/car.png" />
+            </inputLayout:SfTextInputLayout.LeadingView>
+            <TextBox Text="{Binding Path=VehiculoActual.Modelo}" />
+        </inputLayout:SfTextInputLayout>
+
+        <DockPanel>
+            <syncfusion:ButtonAdv DockPanel.Dock="Right" 
+                                  Label="Subir imagen"
+                                  SmallIcon="/img/camera.png"/>
+
+            <inputLayout:SfTextInputLayout Hint="Foto"
+                                           HintFloatMode="Float"
+                                           HelperText="Sube una foto de tu vehiculo">
+                <inputLayout:SfTextInputLayout.LeadingView>
+                    <Image Source="/img/camera.png" />
+                </inputLayout:SfTextInputLayout.LeadingView>
+                <TextBox Text="{Binding Path=FotoVehiculo}" />
+            </inputLayout:SfTextInputLayout>
+        </DockPanel>
+        <DockPanel LastChildFill="False"
+                   Margin="20">
+            <!--Cambiar iconos-->
+            <syncfusion:ButtonAdv DockPanel.Dock="Right"
+                                  Label="Guardar Vehículo"
+                                  SmallIcon="/img/camera.png" 
+                                  IsDefault="True"/>
+            <syncfusion:ButtonAdv DockPanel.Dock="Right"
+                                  Label="Cancelar"
+                                  SmallIcon="/img/camera.png" 
+                                  IsCancel="True"/>
+        </DockPanel>
     </StackPanel>
 </Window>
