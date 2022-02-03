@@ -165,6 +165,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClasesModelo\Estacionamientos.cs" />
     <Compile Include="ClasesModelo\Marca.cs" />
     <Compile Include="servicios\ServicioDatabase.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
@@ -172,6 +173,7 @@
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="servicios\ServicioDialogos.cs" />
     <Compile Include="Servicios\ServicioImgs.cs" />
+    <Compile Include="servicios\ServicioMatricula.cs" />
     <Compile Include="servicios\ServicioNavegacion.cs" />
     <Compile Include="vistamodelo\ClientesVM.cs" />
     <Compile Include="vistamodelo\EstacionamientosVM.cs" />

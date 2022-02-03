@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ProyectoParking.servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,12 +62,22 @@ namespace ProyectoParking.ClasesModelo
 
         public Vehiculo(int idVehiculo, int idCliente, string matricula, int idMarca, string modelo, string tipo)
         {
-            this.idVehiculo = idVehiculo;
-            this.idCliente = idCliente;
-            this.matricula = matricula;
-            this.idMarca = idMarca;
-            this.modelo = modelo;
-            this.tipo = tipo;
+            this.IdVehiculo = idVehiculo;
+            this.IdCliente = idCliente;
+            this.Matricula = matricula;
+            this.IdMarca = idMarca;
+            this.Modelo = modelo;
+            this.Tipo = tipo;
+        }
+
+        public Vehiculo(int idVehiculo, int idCliente, string foto, string modelo)
+        {
+            this.IdVehiculo = idVehiculo;
+            this.IdCliente = idCliente;
+            this.Matricula = ServicioMatricula.SacarMatricula(foto);
+            this.Modelo = modelo;
+            //cuando este hecho el servicio de detectar tipos 
+
         }
 
     }

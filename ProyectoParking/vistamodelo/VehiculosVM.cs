@@ -40,7 +40,7 @@ namespace ProyectoParking.vistamodelo
 
         public void EditarVehiculo()
         {
-            ServicioDatabase.EditarVehiculo(VehiculoSel);
+            //ServicioDatabase.EditarVehiculo(VehiculoSel);
         }
 
         public void EliminarVehiculo()

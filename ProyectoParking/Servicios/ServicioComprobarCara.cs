@@ -20,7 +20,6 @@ namespace ProyectoParking.Servicios
         public static IRestResponse PostCara(string imagen)
         {
             //Cambiar variables a variables de configuracion
-            //Con la version 1.0 funciona, probar el lunes con el proyecto de consola si va
             var client = new RestClient("https://servicio-face-proyecto-parking.cognitiveservices.azure.com/face/v1.0/");
             var request = new RestRequest("detect", Method.POST);
             string data = "{ 'url':'" + imagen + "'}";

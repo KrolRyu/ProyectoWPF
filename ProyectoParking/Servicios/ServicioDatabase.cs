@@ -231,8 +231,8 @@ namespace ProyectoParking.Servicios
                                        "nombre = '" + cliente.Nombre + "'," +
                                        "documento = '" + cliente.Documento + "'," +
                                        "foto = '" + cliente.Foto + "'," +
-                                       "edad = '" + cliente.Edad + "'" +
-                                       "genero = '" + cliente.Genero +"'" +
+                                       "edad = '" + cliente.Edad + "'," +
+                                       "genero = '" + cliente.Genero +"'," +
                                        "telefono = '" + cliente.Telefono +"'" +
                                    "WHERE id_cliente =" + cliente.IdCliente;
             comando.ExecuteNonQuery();
