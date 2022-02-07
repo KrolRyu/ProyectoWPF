@@ -12,12 +12,12 @@ namespace ProyectoParking.servicios
     static class ServicioMatricula
     {
 
-        public static string SacarMatricula(string imagen)
+        public static string SacarMatricula(string imagen, string tipo)
         {
             var response = PostMatricula(imagen);
             string urlGET = response.Headers[0].ToString().Split('=')[1];
             Thread.Sleep(2000);
-            return GetMatricula(urlGET);
+            return GetMatricula(urlGET, tipo);
 
         }
 
@@ -34,14 +34,24 @@ namespace ProyectoParking.servicios
             return response;
         }
 
-        public static string GetMatricula(string url)
+        public static string GetMatricula(string url, string tipo)
         {
             var client = new RestClient(url);
             var request = new RestRequest(Method.GET);
             request.AddHeader("Ocp-Apim-Subscription-Key", "5b398d14a7424edca5be3158a45093ce");
             var response = client.Execute(request);
-            JToken jt = JToken.Parse(response.Content).SelectToken("analyzeResult").SelectToken("readResults").First.SelectToken("lines").First.SelectToken("text");
-            return jt.ToString();
+            if(tipo == "coche")
+            {
+                JToken jt = JToken.Parse(response.Content).SelectToken("analyzeResult").SelectToken("readResults").First.SelectToken("lines").First.SelectToken("text");
+                return jt.ToString();
+            }
+            else
+            {
+                JToken jt = JToken.Parse(response.Content).SelectToken("analyzeResult").SelectToken("readResults").First.SelectToken("lines").First.SelectToken("text");
+                JToken jt2 = JToken.Parse(response.Content).SelectToken("analyzeResult").SelectToken("readResults")[1].SelectToken("lines").First.SelectToken("text");
+                return jt.ToString() + jt2.ToString();
+            }
+            
         }
     }
 }
