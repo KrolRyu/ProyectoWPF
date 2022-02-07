@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,22 @@ using System.Threading.Tasks;
 
 namespace ProyectoParking.servicios
 {
-    class ServicioDetectarVehiculo
+    static class ServicioDetectarVehiculo
     {
-        String predictionKey = "1d14987690a64deda0d17d7790d49cea";
-        String endpoint = "https://customvisionproyectoparkingdint-prediction.cognitiveservices.azure.com/customvision/";
-        String projectID = "768c2adc-d877-4c94-908a-847930e8426a";
-        String publishedName = "Iteration1";
+        public static string ComprobarVehiculo(string ruta)
+        {
+            var respuesta = PostVehiculo(ruta);
+            Root root = JsonConvert.DeserializeObject<Root>(respuesta.Content);
+            if (root.predictions[0].probability > root.predictions[1].probability)
+            {
+                return root.predictions[0].tagName;
+            }
+            else
+            {
+                return root.predictions[1].tagName;
+            }
+        }
 
-        // En desarrollo
         public static IRestResponse PostVehiculo(string imagen)
         {
             var client = new RestClient("https://customvisionproyectoparkingdint-prediction.cognitiveservices.azure.com/customvision/");
@@ -26,5 +35,20 @@ namespace ProyectoParking.servicios
             var response = client.Execute(request);
             return response;
         }
+    }
+    public class Prediction
+    {
+        public double probability { get; set; }
+        public string tagId { get; set; }
+        public string tagName { get; set; }
+    }
+
+    public class Root
+    {
+        public string id { get; set; }
+        public string project { get; set; }
+        public string iteration { get; set; }
+        public DateTime created { get; set; }
+        public List<Prediction> predictions { get; set; }
     }
 }
