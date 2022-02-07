@@ -29,13 +29,13 @@ namespace ProyectoParking.vistas
             InitializeComponent();
         }
 
-        /*public FormularioVehiculoDialog(Vehiculo vehiculoSel, bool nuevo)
+        public FormularioVehiculoDialog(Vehiculo vehiculoSel, bool nuevo)
         {
-            DataContext = vm;
             InitializeComponent();
+            DataContext = vm;
             vm.VehiculoSel = vehiculoSel;
             vm.Nuevo = nuevo;
-        } TODO: Arreglar error */
+        } 
 
         private void ButtonAdv_Click(object sender, RoutedEventArgs e)
         {

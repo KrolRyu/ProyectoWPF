@@ -46,16 +46,19 @@ namespace ProyectoParking.vistamodelo
         {
             RutaImagen = ServicioDialogos.ExaminarImagen();
             ClienteSel.Foto = ServicioImgs.SubirImagenAAzure(RutaImagen);
-            
+
         }
 
         public void InsertarCliente()
         {
-            if (Edit){
+            if (Edit)
+            {
                 ServicioDatabase.EditarCliente(ClienteSel);
-            }else {
+            }
+            else
+            {
                 ServicioDatabase.InsertarCliente(new Cliente(ClienteSel.Nombre, ClienteSel.Documento, ClienteSel.Foto, ClienteSel.Telefono));
-            }           
+            }
             //ClientesVM.RecargarDataGrid(); TODO: Conseguir que se recargue el datagrid despues de insertar
 
         }

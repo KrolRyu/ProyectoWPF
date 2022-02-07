@@ -27,7 +27,6 @@ namespace ProyectoParking
         {
             InitializeComponent();
             ServicioDatabase.ConnectDatabase();
-            ServicioDatabase.InsertarDatosVehiculos();
             this.contentControl.Content = new Inicio();
             DataContext = vm;
         }

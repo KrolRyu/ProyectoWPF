@@ -40,12 +40,27 @@ namespace ProyectoParking.Servicios
 
             comando.CommandText = @"CREATE TABLE IF NOT EXISTS vehiculos (
                                         id_vehiculo INTEGER PRIMARY KEY AUTOINCREMENT,
-                                        id_cliente  INTEGER NOT NULL
-                                        REFERENCES clientes (id_cliente),
+                                        id_cliente  INTEGER NOT NULL REFERENCES clientes (id_cliente),
                                         matricula   TEXT    NOT NULL,
                                         id_marca    INTEGER REFERENCES marcas (id_marca),
                                         modelo      TEXT,
                                         tipo        TEXT    NOT NULL)";
+            comando.ExecuteNonQuery();
+
+            comando.CommandText = @"CREATE TABLE IF NOT EXISTS marcas (
+                                        id_marca INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        marca TEXT NOT NULL)";
+            comando.ExecuteNonQuery();
+
+            comando.CommandText = @"CREATE TABLE IF NOT EXISTS estacionamientos (
+                                        id_estacionamiento INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        id_vehiculo INTEGER REFERENCES vehiculos (id_vehiculo),
+                                        matricula TEXT NOT NULL,
+                                        entrada TEXT NOT NULL,
+                                        salida TEXT, 
+                                        importe REAL, 
+                                        tipo TEXT NOT NULL)";
+
             comando.ExecuteNonQuery();
 
             // Comprobamos si las tablas están vacías y si lo están les añadimos datos de ejemplo
@@ -171,15 +186,15 @@ namespace ProyectoParking.Servicios
 
             return listaVehiculos;
         }
-        private static void InsertarDatosClientes()
+        public static void InsertarDatosClientes()
         {
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
-            comando.CommandText = "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (1, 'Harriott', '106-92-6159', 'hcartin13@networkadvertising.org', 'Progressive tangible interface', 'Female', '2452140252');" +
-                                  "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (2, 'Jocko', '271-78-8979', 'jlumm12@vimeo.com', 'Horizontal grid-enabled hierarchy', 'Male', '4863414850');" +
-                                  "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (3, 'Ofilia', '642-61-2726', 'ocords11@so-net.ne.jp', 'Universal human-resource adapter', 'Genderqueer', '8296305047');" +
-                                  "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (4, 'Rubie', '446-86-1623', 'rplevey10@bloomberg.com', 'Cloned full-range Graphic Interface', 'Genderfluid', '2009434005');" +
-                                  "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (5, 'Pollyanna', '722-55-9858', 'pshippeyz@fotki.com', 'Profound motivating knowledge user', 'Female', '9252836688');";
+            comando.CommandText = "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Harriott', '106-92-6159', 'hcartin13@networkadvertising.org', 'Progressive tangible interface', 'Female', '2452140252');" +
+                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Jocko', '271-78-8979', 'jlumm12@vimeo.com', 'Horizontal grid-enabled hierarchy', 'Male', '4863414850');" +
+                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Ofilia', '642-61-2726', 'ocords11@so-net.ne.jp', 'Universal human-resource adapter', 'Genderqueer', '8296305047');" +
+                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Rubie', '446-86-1623', 'rplevey10@bloomberg.com', 'Cloned full-range Graphic Interface', 'Genderfluid', '2009434005');" +
+                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Pollyanna', '722-55-9858', 'pshippeyz@fotki.com', 'Profound motivating knowledge user', 'Female', '9252836688');";
             comando.ExecuteNonQuery();
             conexion.Close();
         }
@@ -249,8 +264,7 @@ namespace ProyectoParking.Servicios
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
 
-            comando.CommandText = "DELETE FROM clientes " +
-                                   "WHERE id_cliente = " + cliente.IdCliente;
+            comando.CommandText = "DELETE FROM clientes WHERE id_cliente = " + cliente.IdCliente;
             comando.ExecuteNonQuery();
 
             //Cerramos la conexión

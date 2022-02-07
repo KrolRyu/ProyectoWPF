@@ -42,8 +42,7 @@
             <syncfusion:ButtonAdv DockPanel.Dock="Right"
                                   Label="Finalizar estacionamiento"
                                   SmallIcon="/img/remove.png"
-                                  IsDefault="True"
-                                  Click="ButtonAdv_Click_1" />
+                                  IsDefault="True" />
             <syncfusion:ButtonAdv DockPanel.Dock="Right"
                                   Label="Volver"
                                   SmallIcon="/img/camera.png"

@@ -15,7 +15,7 @@
             <inputLayout:SfTextInputLayout.LeadingView>
                 <Image Source="/img/car.png" />
             </inputLayout:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=VehiculoActual.IdVehiculo}"/>
+            <TextBox Text="{Binding Path=VehiculoSel.IdVehiculo}" IsEnabled="False"/>
         </inputLayout:SfTextInputLayout>
 
         <inputLayout:SfTextInputLayout Hint="ID Cliente"
@@ -23,7 +23,7 @@
             <inputLayout:SfTextInputLayout.LeadingView>
                 <Image Source="/img/face-detection.png" />
             </inputLayout:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=VehiculoActual.IdCliente}" />
+            <TextBox Text="{Binding Path=VehiculoSel.IdCliente}" />
         </inputLayout:SfTextInputLayout>
 
         <inputLayout:SfTextInputLayout Hint="ID Marca"
@@ -32,7 +32,7 @@
             <inputLayout:SfTextInputLayout.LeadingView>
                 <Image Source="/img/id.png" />
             </inputLayout:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=VehiculoActual.IdMarca}" />
+            <TextBox Text="{Binding Path=VehiculoSel.IdMarca}" />
         </inputLayout:SfTextInputLayout>
 
         <inputLayout:SfTextInputLayout Hint="Modelo"
@@ -41,7 +41,7 @@
             <inputLayout:SfTextInputLayout.LeadingView>
                 <Image Source="/img/car.png" />
             </inputLayout:SfTextInputLayout.LeadingView>
-            <TextBox Text="{Binding Path=VehiculoActual.Modelo}" />
+            <TextBox Text="{Binding Path=VehiculoSel.Modelo}" />
         </inputLayout:SfTextInputLayout>
 
         <DockPanel>

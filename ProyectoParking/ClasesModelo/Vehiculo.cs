@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoParking.ClasesModelo
 {
-    class Vehiculo : ObservableObject
+    public class Vehiculo : ObservableObject
     {
         private int idVehiculo;
 
