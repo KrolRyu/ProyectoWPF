@@ -182,6 +182,7 @@
     <Compile Include="vistamodelo\FormularioVehiculoDialogVM.cs" />
     <Compile Include="vistamodelo\InicioVM.cs" />
     <Compile Include="vistamodelo\VehiculosVM.cs" />
+    <Compile Include="vistamodelo\VerEstacionamientosVM.cs" />
     <Compile Include="vistas\Clientes.xaml.cs">
       <DependentUpon>Clientes.xaml</DependentUpon>
     </Compile>
@@ -200,6 +201,9 @@
     <Compile Include="vistamodelo\MainWindowVM.cs" />
     <Compile Include="vistas\Vehiculos.xaml.cs">
       <DependentUpon>Vehiculos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="vistas\VerEstacionamientos.xaml.cs">
+      <DependentUpon>VerEstacionamientos.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -236,6 +240,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="vistas\Vehiculos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="vistas\VerEstacionamientos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

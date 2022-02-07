@@ -1,0 +1,53 @@
+﻿<Window x:Class="ProyectoParking.vistas.VerEstacionamientos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoParking.vistas"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="VerEstacionamientos" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Id Estacionamiento</TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamientos.Id_estacionamientos}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Id Vehiculo</TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamientos.Id_Vehiculo}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Matricula</TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamientos.Matricula}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Entrada</TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamientos.Entrada}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Salida</TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamientos.Salida}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Importe</TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamientos.Importe}"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock>Tipo</TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamientos.Tipo}"></TextBlock>
+        </StackPanel>
+        <DockPanel LastChildFill="False"
+                   Margin="20">
+            <!--Cambiar iconos-->
+            <syncfusion:ButtonAdv DockPanel.Dock="Right"
+                                  Label="Finalizar estacionamiento"
+                                  SmallIcon="/img/remove.png"
+                                  IsDefault="True"
+                                  Click="ButtonAdv_Click_1" />
+            <syncfusion:ButtonAdv DockPanel.Dock="Right"
+                                  Label="Volver"
+                                  SmallIcon="/img/camera.png"
+                                  IsCancel="True" />
+        </DockPanel>
+    </StackPanel>
+</Window>
