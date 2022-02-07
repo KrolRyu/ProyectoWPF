@@ -1,4 +1,5 @@
-﻿using ProyectoParking.vistamodelo;
+﻿using ProyectoParking.ClasesModelo;
+using ProyectoParking.vistamodelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,14 @@ namespace ProyectoParking.vistas
             DataContext = vm;
             InitializeComponent();
         }
+
+        /*public FormularioVehiculoDialog(Vehiculo vehiculoSel, bool nuevo)
+        {
+            DataContext = vm;
+            InitializeComponent();
+            vm.VehiculoSel = vehiculoSel;
+            vm.Nuevo = nuevo;
+        } TODO: Arreglar error */
 
         private void ButtonAdv_Click(object sender, RoutedEventArgs e)
         {

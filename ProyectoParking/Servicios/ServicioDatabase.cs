@@ -107,7 +107,7 @@ namespace ProyectoParking.Servicios
             conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
 
-            comando.CommandText = "DELETE vehiculos " +
+            comando.CommandText = "DELETE FROM vehiculos " +
                                    "WHERE id_vehiculo =" + vehiculo.IdVehiculo;
             comando.ExecuteNonQuery();
 
@@ -157,9 +157,9 @@ namespace ProyectoParking.Servicios
                     int idVehiculo = lector.GetInt32(0);
                     int idCliente = lector.GetInt32(1);
                     string matricula = lector.GetString(2);
-                    int idMarca = lector.GetInt32(4);
-                    string modelo = lector.GetString(5);
-                    string tipo = lector.GetString(6);
+                    int idMarca = lector.GetInt32(3);
+                    string modelo = lector.GetString(4);
+                    string tipo = lector.GetString(5);
                     listaVehiculos.Add(new Vehiculo(idVehiculo, idCliente, matricula, idMarca, modelo, tipo));
                 }
             }
@@ -173,6 +173,7 @@ namespace ProyectoParking.Servicios
         }
         private static void InsertarDatosClientes()
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
             comando.CommandText = "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (1, 'Harriott', '106-92-6159', 'hcartin13@networkadvertising.org', 'Progressive tangible interface', 'Female', '2452140252');" +
                                   "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (2, 'Jocko', '271-78-8979', 'jlumm12@vimeo.com', 'Horizontal grid-enabled hierarchy', 'Male', '4863414850');" +
@@ -180,18 +181,20 @@ namespace ProyectoParking.Servicios
                                   "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (4, 'Rubie', '446-86-1623', 'rplevey10@bloomberg.com', 'Cloned full-range Graphic Interface', 'Genderfluid', '2009434005');" +
                                   "insert into Clientes (id_cliente, nombre, documento, foto, edad, genero, telefono) values (5, 'Pollyanna', '722-55-9858', 'pshippeyz@fotki.com', 'Profound motivating knowledge user', 'Female', '9252836688');";
             comando.ExecuteNonQuery();
+            conexion.Close();
         }
 
-        private static void InsertarDatosVehiculos()
+        public static void InsertarDatosVehiculos()
         {
+            conexion.Open();
             SqliteCommand comando = conexion.CreateCommand();
-            comando.CommandText = "insert into vehiculos (id_vehiculo, id_cliente, matricula, id_marca, modelo, tipo) values (1, 1, 'WBAPK5G59BN204645', 1, 'Avalon', 'Female');" +
-                                  "insert into vehiculos (id_vehiculo, id_cliente, matricula, id_marca, modelo, tipo) values (2, 2, 'WAUDF78E88A934340', 2, 'Eclipse', 'Female');" +
-                                  "insert into vehiculos (id_vehiculo, id_cliente, matricula, id_marca, modelo, tipo) values (3, 2, 'WAUCFAFH3BN051266', 3, 'Continental GT', 'Female');" +
-                                  "insert into vehiculos (id_vehiculo, id_cliente, matricula, id_marca, modelo, tipo) values (4, 3, 'WBA3N3C54FF518798', 4, 'Sierra 3500', 'Male');" +
-                                  "insert into vehiculos (id_vehiculo, id_cliente, matricula, id_marca, modelo, tipo) values (5, 5, '1FAHP2DW5BG954722', 5, 'Camry Solara', 'Female');";
+            comando.CommandText = "insert into vehiculos (id_cliente, matricula, id_marca, modelo, tipo) values (1, 'WBAPK5G59BN204645', 1, 'Avalon', 'Female');" +
+                                  "insert into vehiculos (id_cliente, matricula, id_marca, modelo, tipo) values (2, 'WAUDF78E88A934340', 2, 'Eclipse', 'Female');" +
+                                  "insert into vehiculos (id_cliente, matricula, id_marca, modelo, tipo) values (2, 'WAUCFAFH3BN051266', 3, 'Continental GT', 'Female');" +
+                                  "insert into vehiculos (id_cliente, matricula, id_marca, modelo, tipo) values (3, 'WBA3N3C54FF518798', 4, 'Sierra 3500', 'Male');" +
+                                  "insert into vehiculos (id_cliente, matricula, id_marca, modelo, tipo) values (5, '1FAHP2DW5BG954722', 5, 'Camry Solara', 'Female');";
             comando.ExecuteNonQuery();
-
+            conexion.Close();
         }
 
         //metodos insertar, editar y borrrar un cliente

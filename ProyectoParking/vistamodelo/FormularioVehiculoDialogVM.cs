@@ -14,12 +14,12 @@ namespace ProyectoParking.vistamodelo
     {
         //Propiedades
 
-        private Vehiculo vehiculoActual;
+        private Vehiculo vehiculoSel;
 
-        public Vehiculo VehiculoActual
+        public Vehiculo VehiculoSel
         {
-            get { return vehiculoActual; }
-            set { SetProperty(ref vehiculoActual, value); }
+            get { return vehiculoSel; }
+            set { SetProperty(ref vehiculoSel, value); }
         }
 
         private string fotoVehiculo;
@@ -43,14 +43,14 @@ namespace ProyectoParking.vistamodelo
         //Contructor de crear
         public FormularioVehiculoDialogVM()
         {
-            this.vehiculoActual = new Vehiculo();
+            this.vehiculoSel = new Vehiculo();
             nuevo = true;
         }
 
         //Constructor de editar
         public FormularioVehiculoDialogVM(Vehiculo vehiculo)
         {
-            this.vehiculoActual = vehiculo;
+            this.vehiculoSel = vehiculo;
             nuevo = false;
 
         }
@@ -66,8 +66,8 @@ namespace ProyectoParking.vistamodelo
                 //TODO sacar la matricula y el tipo
                 string matricula = "";
                 string tipo = "";
-                VehiculoActual.Tipo = tipo;
-                VehiculoActual.Matricula = matricula;
+                vehiculoSel.Tipo = tipo;
+                vehiculoSel.Matricula = matricula;
             }
             else
             {
@@ -79,11 +79,11 @@ namespace ProyectoParking.vistamodelo
         {
             if (nuevo)
             {
-                ServicioDatabase.InsertarVehiculo(vehiculoActual);
+                ServicioDatabase.InsertarVehiculo(vehiculoSel);
             }
             else
             {
-                ServicioDatabase.EditarVehiculo(VehiculoActual);
+                ServicioDatabase.EditarVehiculo(vehiculoSel);
             }
         }
 

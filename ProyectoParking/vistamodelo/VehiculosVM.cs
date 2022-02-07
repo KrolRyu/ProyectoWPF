@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ProyectoParking.ClasesModelo;
+using ProyectoParking.servicios;
 using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
@@ -35,12 +36,12 @@ namespace ProyectoParking.vistamodelo
 
         public void AñadirVehiculo()
         {
-            //ServicioDatabase.InsertarVehiculo(/* new Vehiculo con los datos de la ventana de añadir */);
+            ServicioNavegacion.AbrirFormularioVehiculos();
         }
 
         public void EditarVehiculo()
         {
-            //ServicioDatabase.EditarVehiculo(VehiculoSel);
+            ServicioNavegacion.AbrirFormularioVehiculos(VehiculoSel, true);
         }
 
         public void EliminarVehiculo()

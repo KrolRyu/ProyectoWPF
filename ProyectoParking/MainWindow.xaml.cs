@@ -1,4 +1,5 @@
-﻿using ProyectoParking.vistas;
+﻿using ProyectoParking.Servicios;
+using ProyectoParking.vistas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,8 @@ namespace ProyectoParking
         public MainWindow()
         {
             InitializeComponent();
-            Servicios.ServicioDatabase.ConnectDatabase();
+            ServicioDatabase.ConnectDatabase();
+            ServicioDatabase.InsertarDatosVehiculos();
             this.contentControl.Content = new Inicio();
             DataContext = vm;
         }
