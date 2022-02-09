@@ -252,7 +252,39 @@ namespace ProyectoParking.Servicios
         }
         #endregion
 
+        #region MetodosEstacionamientos
+
         //Metodos para gestionar la tabla de estacionamientos
+
+        public static ObservableCollection<Estacionamiento> GetEstacionamientos()
+        {
+            conexion.Open();
+            SqliteCommand comando = conexion.CreateCommand();
+            comando.CommandText = "SELECT * FROM estacionamientos";
+            SqliteDataReader lector = comando.ExecuteReader();
+            ObservableCollection<Estacionamiento> listaEstacionamientos = new ObservableCollection<Estacionamiento>();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    int id_estacionamiento = lector.GetInt32(0);
+                    int id_vehiculo = lector.GetInt32(1);
+                    string matricula = lector.GetString(2);
+                    string entrada = lector.GetString(3);
+                    string salida = lector.GetString(4);
+                    double importe = lector.GetDouble(5);
+                    string tipo = lector.GetString(6);
+                    listaEstacionamientos.Add(new Estacionamiento(id_estacionamiento, id_vehiculo, matricula, entrada, salida, importe, tipo));
+                }
+            }
+
+            lector.Close();
+
+            //Cerramos la conexión
+            conexion.Close();
+
+            return listaEstacionamientos;
+        }
 
         public static void EliminarEstacionamiento(Estacionamiento estacionamientos)
         {
@@ -265,8 +297,6 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexion
             conexion.Close();
         }
-
-        #region MetodosEstacionamientos
 
         #endregion
     }
