@@ -4,13 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProyectoParking.vistas" xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             xmlns:convertidores="clr-namespace:ProyectoParking.convertidores"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <convertidores:TipoVehiculoToImageConverter x:Key="TipoVehiculoToImageConverter" />
+
+    </UserControl.Resources>
+    
     <Grid>
         <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Path=Estacionamientos}" 
                                SelectedItem="{Binding Path=EstacionamientoSel}" ColumnSizer="Star" AutoGenerateColumns="False">
             <syncfusion:SfDataGrid.Columns>
-                <syncfusion:GridTextColumn MappingName="Tipo"/>
+                <syncfusion:GridTextColumn MappingName="{Binding Path=Tipo, Converter={StaticResource TipoVehiculoToImageConverter}}" />
             </syncfusion:SfDataGrid.Columns>
         </syncfusion:SfDataGrid>
     </Grid>
