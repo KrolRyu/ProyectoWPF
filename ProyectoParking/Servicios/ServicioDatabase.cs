@@ -131,35 +131,6 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
-        public static ObservableCollection<Vehiculo> GetVehiculos()
-        {
-            conexion.Open();
-            SqliteCommand comando = conexion.CreateCommand();
-            comando.CommandText = "SELECT * FROM vehiculos";
-            SqliteDataReader lector = comando.ExecuteReader();
-            ObservableCollection<Vehiculo> listaVehiculos = new ObservableCollection<Vehiculo>();
-            if (lector.HasRows)
-            {
-                while (lector.Read())
-                {
-                    int idVehiculo = lector.GetInt32(0);
-                    int idCliente = lector.GetInt32(1);
-                    string matricula = lector.GetString(2);
-                    int idMarca = lector.GetInt32(3);
-                    string modelo = lector.GetString(4);
-                    string tipo = lector.GetString(5);
-                    listaVehiculos.Add(new Vehiculo(idVehiculo, idCliente, matricula, idMarca, modelo, tipo));
-                }
-            }
-
-            lector.Close();
-
-            //Cerramos la conexión
-            conexion.Close();
-
-            return listaVehiculos;
-        }
-
         public static void InsertarDatosVehiculos()
         {
             conexion.Open();
@@ -279,6 +250,10 @@ namespace ProyectoParking.Servicios
 
             return listaClientes;
         }
+        #endregion
+
+        #region MetodosEstacionamientos
+
         #endregion
     }
 }
