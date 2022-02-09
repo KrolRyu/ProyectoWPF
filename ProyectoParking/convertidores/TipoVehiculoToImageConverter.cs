@@ -15,11 +15,11 @@ namespace ProyectoParking.convertidores
             switch (value)
             {
                 case "coche":
-                    return "assets/coche.png";
+                    return "/img/coche.png";
                 case "moto":
-                    return "assets/moto.png";
+                    return "/img/moto.png";
                 default:
-                    return "assets/default.png";
+                    return "/img/default.png";
             }
         }
 
