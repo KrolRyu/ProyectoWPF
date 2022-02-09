@@ -28,6 +28,11 @@ namespace ProyectoParking.vistamodelo
         }
         public VerEstacionamientosVM() { }
 
+        public VerEstacionamientosVM ()
+        {
+
+        }
+
         //Metodos
         public void FinalizarEstacionamiento()
         {
