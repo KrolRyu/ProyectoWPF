@@ -26,5 +26,10 @@ namespace ProyectoParking.vistas
             InitializeComponent();
             DataContext = vm;
         }
+
+        private void Finalizar_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO hacer que esto elimine del dataGrid no de la base de datos
+        }
     }
 }

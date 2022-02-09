@@ -44,7 +44,6 @@ namespace ProyectoParking.vistamodelo
             //probar cuando ruben acabe y se pueda conectar
             double precioXMin = 1;
             DateTime fecharegistro = DateTime.Parse(Estacionamiento.Entrada);
-            Estacionamiento.Salida = DateTime.Now.ToLongTimeString();
             var tiempo = (DateTime.Now - fecharegistro).TotalMinutes;
             return double.Parse(tiempo.ToString()) * precioXMin;
         }
