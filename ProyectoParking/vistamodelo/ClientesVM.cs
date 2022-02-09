@@ -1,4 +1,5 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+﻿using Microsoft.Data.Sqlite;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ProyectoParking.ClasesModelo;
 using ProyectoParking.servicios;
 using ProyectoParking.Servicios;
@@ -8,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ProyectoParking.vistamodelo
 {
@@ -38,16 +40,27 @@ namespace ProyectoParking.vistamodelo
         public void AñadirCliente()
         {
             ServicioNavegacion.AbrirFormularioCliente();
+            RecargarDataGrid();
         }
 
         public void EditarCliente()
         {
             ServicioNavegacion.AbrirFormularioCliente(ClienteSel, true);
+            RecargarDataGrid();
         }
 
         public void EliminarCliente()
         {
-            ServicioDatabase.EliminarCliente(ClienteSel);
+            // Caputramos excepción para mostrar diálogo si el cliente tiene un vehículo asociado
+            try
+            {
+                ServicioDatabase.EliminarCliente(ClienteSel);
+                RecargarDataGrid();
+            }
+            catch (SqliteException)
+            {
+                ServicioDialogos.ServicioMessageBox("Borra los vehículos asociados al cliente primero", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
         
         public void RecargarDataGrid()
