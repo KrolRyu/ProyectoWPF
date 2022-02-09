@@ -10,31 +10,31 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock>Id Estacionamiento</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamientos.Id_estacionamientos}"></TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamiento.Id_estacionamientos}"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock>Id Vehiculo</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamientos.Id_Vehiculo}"></TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamiento.Id_Vehiculo}"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock>Matricula</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamientos.Matricula}"></TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamiento.Matricula}"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock>Entrada</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamientos.Entrada}"></TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamiento.Entrada}"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock>Salida</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamientos.Salida}"></TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamiento.Salida}"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock>Importe</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamientos.Importe}"></TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamiento.Importe}"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock>Tipo</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamientos.Tipo}"></TextBlock>
+            <TextBlock Text="{Binding Path=Estacionamiento.Tipo}"></TextBlock>
         </StackPanel>
         <DockPanel LastChildFill="False"
                    Margin="20">

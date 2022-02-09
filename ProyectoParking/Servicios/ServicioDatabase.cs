@@ -270,5 +270,19 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexión
             conexion.Close();
         }
+
+        //Metodos para gestionar la tabla de estacionamientos
+
+        public static void EliminarEstacionamiento(ClasesModelo.Estacionamientos estacionamientos)
+        {
+            conexion.Open();
+            SqliteCommand comando = conexion.CreateCommand();
+
+            comando.CommandText = "DELETE FROM estacionamientos WHERE id_estacionamientos = " + estacionamientos.Id_estacionamientos;
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexion
+            conexion.Close();
+        }
     }
 }
