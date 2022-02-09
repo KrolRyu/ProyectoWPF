@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoParking.ClasesModelo
 {
-    class Estacionamientos: ObservableObject
+    class Estacionamiento: ObservableObject
     {
         //Propiedades
 
@@ -56,7 +56,7 @@ namespace ProyectoParking.ClasesModelo
         public double Importe
         {
             get { return importe; }
-            set { SetProperty(ref value, importe); }
+            set { SetProperty(ref importe, value); }
         }
 
         private string tipo;
@@ -64,16 +64,16 @@ namespace ProyectoParking.ClasesModelo
         public string Tipo
         {
             get { return tipo; }
-            set { SetProperty(ref value, tipo); }
+            set { SetProperty(ref tipo, value); }
         }
 
         //Constructores
 
-        public Estacionamientos() { }
+        public Estacionamiento() { }
 
-        public Estacionamientos(int id_estacionamientos, int id_vehiculo, string matricula, string entrada, string salida, double importe, string tipo)
+        public Estacionamiento(int id_estacionamientos, int id_vehiculo, string matricula, string entrada, string salida, double importe, string tipo)
         {
-            this.Id_estacionamientos = id_estacionamientos;
+            this.id_estacionamientos = id_estacionamientos;
             this.id_vehiculo = id_vehiculo;
             this.Matricula = matricula;
             this.Entrada = entrada;

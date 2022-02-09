@@ -12,9 +12,9 @@ namespace ProyectoParking.vistamodelo
     class VerEstacionamientosVM: ObservableObject
     {
         //Propiedades
-        private Estacionamientos estacionamiento;
+        private Estacionamiento estacionamientos;
 
-        public  Estacionamientos Estacionamiento
+        public  Estacionamiento Estacionamientos
         {
             get { return estacionamiento; }
             set { SetProperty(ref estacionamiento, value); }
