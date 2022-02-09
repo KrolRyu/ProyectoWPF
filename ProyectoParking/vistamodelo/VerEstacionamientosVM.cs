@@ -12,18 +12,18 @@ namespace ProyectoParking.vistamodelo
     class VerEstacionamientosVM: ObservableObject
     {
         //Propiedades
-        private Estacionamiento estacionamientos;
+        private Estacionamiento estacionamiento;
 
-        public  Estacionamiento Estacionamientos
+        public  Estacionamiento Estacionamiento
         {
             get { return estacionamiento; }
             set { SetProperty(ref estacionamiento, value); }
         }
 
         //Constructor
-        public VerEstacionamientosVM(Estacionamientos estacionamientos) 
+        public VerEstacionamientosVM(Estacionamiento estacionamiento) 
         {
-            this.Estacionamiento = estacionamientos;
+            this.Estacionamiento = estacionamiento;
             Estacionamiento.Importe = CalcularImporte();
         }
 
