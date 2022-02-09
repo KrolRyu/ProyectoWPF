@@ -27,6 +27,11 @@ namespace ProyectoParking.vistamodelo
             Estacionamiento.Importe = CalcularImporte();
         }
 
+        public VerEstacionamientosVM ()
+        {
+
+        }
+
         //Metodos
         public void FinalizarEstacionamiento()
         {

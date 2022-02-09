@@ -1,4 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ProyectoParking.ClasesModelo;
+using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,9 +12,9 @@ namespace ProyectoParking.vistamodelo
 {
     class EstacionamientosVM : ObservableObject
     {
-        private ObservableCollection<EstacionamientosVM> estacionamientos;
+        private ObservableCollection<Estacionamiento> estacionamientos;
 
-        public ObservableCollection<EstacionamientosVM> Estacionamientos
+        public ObservableCollection<Estacionamiento> Estacionamientos
         {
             get { return estacionamientos; }
             set { SetProperty(ref estacionamientos, value); }
@@ -20,7 +22,7 @@ namespace ProyectoParking.vistamodelo
 
         public EstacionamientosVM()
         {
-
+            Estacionamientos = ServicioDatabase.GetEstacionamientos();
         }
     }
 }
