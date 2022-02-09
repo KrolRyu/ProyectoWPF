@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ProyectoParking.servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,6 +81,18 @@ namespace ProyectoParking.ClasesModelo
             this.Salida = salida;
             this.Importe = importe;
             this.Tipo = tipo;
+        }
+
+        //Este es el contructor para hacer con una foto
+        public Estacionamiento(int id_estacionamientos, int id_vehiculo, string foto)
+        {
+            this.Id_estacionamientos = id_estacionamientos;
+            this.Id_vehiculo = id_vehiculo;
+            this.Tipo = ServicioDetectarVehiculo.ComprobarVehiculo(foto);
+            this.Matricula = ServicioMatricula.GetMatricula(foto, Tipo);
+            this.Entrada = DateTime.Now.ToLongTimeString();
+            this.salida = null;
+            this.Importe = default;
         }
 
     }

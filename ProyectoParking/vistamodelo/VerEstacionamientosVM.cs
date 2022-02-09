@@ -26,6 +26,7 @@ namespace ProyectoParking.vistamodelo
             this.Estacionamiento = estacionamiento;
             Estacionamiento.Importe = CalcularImporte();
         }
+        public VerEstacionamientosVM() { }
 
         //Metodos
         public void FinalizarEstacionamiento()
@@ -37,12 +38,11 @@ namespace ProyectoParking.vistamodelo
         public double CalcularImporte()
         {
             //probar cuando ruben acabe y se pueda conectar
-            //Creo que es mejor pasar este metodo a la clase de Estacionamiento
             double precioXMin = 1;
             DateTime fecharegistro = DateTime.Parse(Estacionamiento.Entrada);
+            Estacionamiento.Salida = DateTime.Now.ToLongTimeString();
             var tiempo = (DateTime.Now - fecharegistro).TotalMinutes;
             return double.Parse(tiempo.ToString()) * precioXMin;
-
         }
 
     }
