@@ -10,20 +10,16 @@ namespace ProyectoParking.vistamodelo
 {
     class EstacionamientosVM : ObservableObject
     {
-        public EstacionamientosVM()
-        {
-            private ObservableCollection<Estacionamiento> myVar;
+        private ObservableCollection<EstacionamientosVM> estacionamientos;
 
-        public int MyProperty
+        public ObservableCollection<EstacionamientosVM> Estacionamientos
         {
-            get { return myVar; }
-            set { myVar = value; }
+            get { return estacionamientos; }
+            set { SetProperty(ref estacionamientos, value); }
         }
 
         public EstacionamientosVM()
-            {
-
-            }
+        {
 
         }
     }
