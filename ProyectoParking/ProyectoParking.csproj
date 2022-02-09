@@ -165,7 +165,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ClasesModelo\Estacionamientos.cs" />
+    <Compile Include="ClasesModelo\Estacionamiento.cs" />
     <Compile Include="ClasesModelo\Marca.cs" />
     <Compile Include="servicios\ServicioDatabase.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
