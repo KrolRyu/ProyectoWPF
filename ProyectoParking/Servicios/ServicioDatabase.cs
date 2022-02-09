@@ -76,6 +76,7 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+        #region MetodosVehiculos
         // Métodos para Insertar, Editar y Borrar un vehículo
         public static void InsertarVehiculo(Vehiculo vehiculo)
         {
@@ -129,35 +130,7 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexión
             conexion.Close();
         }
-        public static ObservableCollection<Cliente> GetClientes()
-        {
-            conexion.Open();
-            SqliteCommand comando = conexion.CreateCommand();
-            comando.CommandText = "SELECT * FROM clientes";
-            SqliteDataReader lector = comando.ExecuteReader();
-            ObservableCollection<Cliente> listaClientes = new ObservableCollection<Cliente>();
-            if(lector.HasRows)
-            {
-                while(lector.Read())
-                {
-                    int id = lector.GetInt32(0);
-                    string nombre = lector.GetString(1);
-                    string documento = lector.GetString(2);
-                    string foto = lector.GetString(3);
-                    int edad = lector.GetInt32(4);
-                    string genero = lector.GetString(5);
-                    string telefono = lector.GetString(6);
-                    listaClientes.Add(new Cliente(id, nombre, documento, foto, edad, genero, telefono));
-                }
-            }
 
-            lector.Close();
-
-            //Cerramos la conexión
-            conexion.Close();
-
-            return listaClientes;
-        }
         public static ObservableCollection<Vehiculo> GetVehiculos()
         {
             conexion.Open();
@@ -186,18 +159,6 @@ namespace ProyectoParking.Servicios
 
             return listaVehiculos;
         }
-        public static void InsertarDatosClientes()
-        {
-            conexion.Open();
-            SqliteCommand comando = conexion.CreateCommand();
-            comando.CommandText = "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Harriott', '106-92-6159', 'hcartin13@networkadvertising.org', 'Progressive tangible interface', 'Female', '2452140252');" +
-                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Jocko', '271-78-8979', 'jlumm12@vimeo.com', 'Horizontal grid-enabled hierarchy', 'Male', '4863414850');" +
-                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Ofilia', '642-61-2726', 'ocords11@so-net.ne.jp', 'Universal human-resource adapter', 'Genderqueer', '8296305047');" +
-                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Rubie', '446-86-1623', 'rplevey10@bloomberg.com', 'Cloned full-range Graphic Interface', 'Genderfluid', '2009434005');" +
-                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Pollyanna', '722-55-9858', 'pshippeyz@fotki.com', 'Profound motivating knowledge user', 'Female', '9252836688');";
-            comando.ExecuteNonQuery();
-            conexion.Close();
-        }
 
         public static void InsertarDatosVehiculos()
         {
@@ -211,6 +172,24 @@ namespace ProyectoParking.Servicios
             comando.ExecuteNonQuery();
             conexion.Close();
         }
+        #endregion
+
+        #region MetodosClientes
+
+        public static void InsertarDatosClientes()
+        {
+            conexion.Open();
+            SqliteCommand comando = conexion.CreateCommand();
+            comando.CommandText = "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Harriott', '106-92-6159', 'hcartin13@networkadvertising.org', 'Progressive tangible interface', 'Female', '2452140252');" +
+                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Jocko', '271-78-8979', 'jlumm12@vimeo.com', 'Horizontal grid-enabled hierarchy', 'Male', '4863414850');" +
+                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Ofilia', '642-61-2726', 'ocords11@so-net.ne.jp', 'Universal human-resource adapter', 'Genderqueer', '8296305047');" +
+                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Rubie', '446-86-1623', 'rplevey10@bloomberg.com', 'Cloned full-range Graphic Interface', 'Genderfluid', '2009434005');" +
+                                  "insert into clientes (nombre, documento, foto, edad, genero, telefono) values ('Pollyanna', '722-55-9858', 'pshippeyz@fotki.com', 'Profound motivating knowledge user', 'Female', '9252836688');";
+            comando.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+
 
         //metodos insertar, editar y borrrar un cliente
 
@@ -270,5 +249,36 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexión
             conexion.Close();
         }
+
+        public static ObservableCollection<Cliente> GetClientes()
+        {
+            conexion.Open();
+            SqliteCommand comando = conexion.CreateCommand();
+            comando.CommandText = "SELECT * FROM clientes";
+            SqliteDataReader lector = comando.ExecuteReader();
+            ObservableCollection<Cliente> listaClientes = new ObservableCollection<Cliente>();
+            if (lector.HasRows)
+            {
+                while (lector.Read())
+                {
+                    int id = lector.GetInt32(0);
+                    string nombre = lector.GetString(1);
+                    string documento = lector.GetString(2);
+                    string foto = lector.GetString(3);
+                    int edad = lector.GetInt32(4);
+                    string genero = lector.GetString(5);
+                    string telefono = lector.GetString(6);
+                    listaClientes.Add(new Cliente(id, nombre, documento, foto, edad, genero, telefono));
+                }
+            }
+
+            lector.Close();
+
+            //Cerramos la conexión
+            conexion.Close();
+
+            return listaClientes;
+        }
+        #endregion
     }
 }
