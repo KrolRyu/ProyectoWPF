@@ -26,10 +26,10 @@ namespace ProyectoParking.servicios
 
         public static IRestResponse PostVehiculo(string imagen)
         {
-            var client = new RestClient("https://customvisionproyectoparkingdint-prediction.cognitiveservices.azure.com/customvision/");
-            var request = new RestRequest("v3.0/Prediction/768c2adc-d877-4c94-908a-847930e8426a/classify/iterations/Iteration1/", Method.POST);
+            var client = new RestClient(Properties.Settings.Default.EndpointIACustomVision);
+            var request = new RestRequest(Properties.Settings.Default.MethodIACustomVision, Method.POST);
             string data = "{ 'url':'" + imagen + "'}";
-            request.AddHeader("Prediction-Key", "1d14987690a64deda0d17d7790d49cea");
+            request.AddHeader("Prediction-Key", Properties.Settings.Default.PredictionKeyIACustomVision);
             request.AddHeader("Content-Type", "application/json");
             request.AddJsonBody(data);
             var response = client.Execute(request);

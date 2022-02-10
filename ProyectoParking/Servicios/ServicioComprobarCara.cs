@@ -20,10 +20,10 @@ namespace ProyectoParking.Servicios
         public static IRestResponse PostCara(string imagen)
         {
             //Cambiar variables a variables de configuracion
-            var client = new RestClient("https://servicio-face-proyecto-parking.cognitiveservices.azure.com/face/v1.0/");
+            var client = new RestClient(Properties.Settings.Default.EndpointIACara);
             var request = new RestRequest("detect", Method.POST);
             string data = "{ 'url':'" + imagen + "'}";
-            request.AddHeader("Ocp-Apim-Subscription-Key", "38cac79a9bd04f648466d0b24ad1d9f5");
+            request.AddHeader("Ocp-Apim-Subscription-Key", Properties.Settings.Default.LicenseKeyIACara);
             request.AddHeader("Content-Type", "application/json");
             request.AddJsonBody(data);
             request.AddParameter("returnFaceAttributes", "age, gender", ParameterType.QueryString);
