@@ -44,6 +44,7 @@ namespace ProyectoParking.vistas
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
             vm.InsertarCliente();
+            DialogResult = true; // Para que se cierre el formulario al insertar el cliente
         }
     }
 }
