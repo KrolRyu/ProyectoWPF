@@ -39,7 +39,7 @@ namespace ProyectoParking.vistas
 
         private void ButtonAdv_Click(object sender, RoutedEventArgs e)
         {
-            vm.SacarMatriculaYTipo();
+            vm.SubirImagenAzure();
         }
 
         private void ButtonAdv_Click_1(object sender, RoutedEventArgs e)

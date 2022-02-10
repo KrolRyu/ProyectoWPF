@@ -22,10 +22,8 @@ namespace ProyectoParking.Servicios
                 var clienteContenedor = clienteBlobService.GetBlobContainerClient(nombreContenedorBlobs);
                 Stream streamImagen = File.OpenRead(rutaImagen);
                 string nombreImagen = Path.GetFileName(rutaImagen);
-                if(clienteContenedor.GetBlobClient(nombreImagen) == null)
-                {
-                    clienteContenedor.UploadBlob(nombreImagen, streamImagen);
-                }
+                clienteContenedor.DeleteBlobIfExists(nombreImagen);
+                clienteContenedor.UploadBlob(nombreImagen, streamImagen);
                 
                 var clienteBlobImagen = clienteContenedor.GetBlobClient(nombreImagen);
                 string urlImagen = clienteBlobImagen.Uri.AbsoluteUri;

@@ -70,13 +70,14 @@ namespace ProyectoParking.ClasesModelo
             this.Tipo = tipo;
         }
 
-        public Vehiculo(int idVehiculo, int idCliente, string foto, string modelo)
+        public Vehiculo(int idVehiculo, int idCliente, string foto, string modelo, int marca)
         {
             this.IdVehiculo = idVehiculo;
             this.IdCliente = idCliente;
             this.Tipo = ServicioDetectarVehiculo.ComprobarVehiculo(foto);
             this.Matricula = ServicioMatricula.SacarMatricula(foto, Tipo);
             this.Modelo = modelo;
+            this.idMarca = marca;
 
         }
 
