@@ -29,7 +29,12 @@
             </Button>
         </StackPanel>
 
-        <syncfusion:SfDataGrid DockPanel.Dock="Left" x:Name="dataGrid" Margin="10" ItemsSource="{Binding Path=Vehiculos}" SelectedItem="{Binding Path=VehiculoSel}" ColumnSizer="Star"/>
+        <syncfusion:SfDataGrid DockPanel.Dock="Left" 
+                               x:Name="dataGrid" Margin="10" 
+                               ItemsSource="{Binding Path=Vehiculos}" 
+                               SelectedItem="{Binding Path=VehiculoSel}" 
+                               ColumnSizer="Star"
+                               AllowFiltering="True"/>
 
     </DockPanel>
 </UserControl>
