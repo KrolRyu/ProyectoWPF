@@ -16,7 +16,8 @@
     <Grid>
         <ListBox ItemsSource="{Binding Path=Estacionamientos}"
                  SelectedItem="{Binding Path=EstacionamientoSel}"
-                 ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                 MouseDoubleClick="ListBoxItem_DoubleClick">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel></WrapPanel>

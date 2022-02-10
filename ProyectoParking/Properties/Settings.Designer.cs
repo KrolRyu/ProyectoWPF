@@ -63,7 +63,7 @@ namespace ProyectoParking.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("v3.0/Prediction/768c2adc-d877-4c94-908a-847930e8426a/classify/iterations/Iteratio" +
-            "n1/")]
+            "n1/url")]
         public string MethodIACustomVision {
             get {
                 return ((string)(this["MethodIACustomVision"]));

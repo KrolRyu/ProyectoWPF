@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -26,6 +27,11 @@ namespace ProyectoParking.vistas
         {
             InitializeComponent();
             DataContext = vm;
+        }
+
+        private void ListBoxItem_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2) MessageBox.Show("Double Click");
         }
     }
 }
