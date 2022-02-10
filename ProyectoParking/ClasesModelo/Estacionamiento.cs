@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoParking.ClasesModelo
 {
-    class Estacionamiento: ObservableObject
+    public class Estacionamiento: ObservableObject
     {
         //Propiedades
 

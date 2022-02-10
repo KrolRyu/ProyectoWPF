@@ -19,5 +19,6 @@ namespace ProyectoParking.servicios
 
         internal static bool? AbrirFormularioVehiculos() => new FormularioVehiculoDialog().ShowDialog();
         internal static bool? AbrirFormularioVehiculos(Vehiculo x, bool edit) => new FormularioVehiculoDialog(x, edit).ShowDialog();
+        internal static bool? AbrriFormularioEstacionamientos() => new VerEstacionamientos().ShowDialog();
     }
 }
