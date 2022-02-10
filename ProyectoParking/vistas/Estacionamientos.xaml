@@ -25,7 +25,13 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <!-- TODO: Que aparezca mas info para saber de quien es el vehiculo -->
-                    <Image Source="{Binding Path=Tipo, Converter={StaticResource TipoVehiculoToImageConverter}}" Width="100" Height="200"></Image>
+                    <StackPanel>
+                        <TextBlock HorizontalAlignment="Center" FontSize="25">
+                            <Run Text="ID Vehiculo:" />
+                            <Run Text="{Binding Path=Id_vehiculo}" />
+                        </TextBlock>
+                        <Image Source="{Binding Path=Tipo, Converter={StaticResource TipoVehiculoToImageConverter}}" Width="100" Height="200"></Image>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
