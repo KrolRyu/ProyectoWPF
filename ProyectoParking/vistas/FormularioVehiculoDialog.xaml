@@ -64,12 +64,12 @@
             <!--Cambiar iconos-->
             <syncfusion:ButtonAdv DockPanel.Dock="Right"
                                   Label="Guardar Vehículo"
-                                  SmallIcon="/img/camera.png" 
+                                  SmallIcon="/img/plus.png" 
                                   IsDefault="True"
                                   Click="ButtonAdv_Click_1" />
             <syncfusion:ButtonAdv DockPanel.Dock="Right"
                                   Label="Cancelar"
-                                  SmallIcon="/img/camera.png" 
+                                  SmallIcon="/img/remove.png" 
                                   IsCancel="True"/>
         </DockPanel>
     </StackPanel>
