@@ -57,19 +57,14 @@ namespace ProyectoParking.vistamodelo
 
         //Metodos
 
-        public void SacarMatriculaYTipo()
+        public void SubirImagenAzure()
         {
-            FotoVehiculo = ServicioDialogos.ExaminarImagen();
-            FotoVehiculo = ServicioImgs.SubirImagenAAzure(FotoVehiculo);
-            if(FotoVehiculo != "")
+            try
             {
-                //TODO sacar la matricula y el tipo
-                string matricula = "";
-                string tipo = "";
-                vehiculoSel.Tipo = tipo;
-                vehiculoSel.Matricula = matricula;
+                FotoVehiculo = ServicioDialogos.ExaminarImagen();
+                FotoVehiculo = ServicioImgs.SubirImagenAAzure(FotoVehiculo);
             }
-            else
+            catch(Exception e)
             {
                 ServicioDialogos.ServicioMessageBox("Se ha producido un error subiendo la imagen", "ERROR", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }
@@ -79,7 +74,7 @@ namespace ProyectoParking.vistamodelo
         {
             if (nuevo)
             {
-                ServicioDatabase.InsertarVehiculo(vehiculoSel);
+                ServicioDatabase.InsertarVehiculo(new Vehiculo(VehiculoSel.IdVehiculo, VehiculoSel.IdCliente, FotoVehiculo, VehiculoSel.Modelo, VehiculoSel.IdMarca));
             }
             else
             {
