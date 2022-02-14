@@ -79,14 +79,17 @@
     <Reference Include="Syncfusion.Grid.Windows, Version=19.4460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Grid.Windows.19.4.0.47\lib\net46\Syncfusion.Grid.Windows.dll</HintPath>
     </Reference>
-    <Reference Include="Syncfusion.Licensing, Version=19.4460.0.48, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Licensing.19.4.0.48\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    <Reference Include="Syncfusion.Licensing, Version=19.4460.0.50, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.19.4.0.50\lib\net46\Syncfusion.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfGrid.WPF, Version=19.4460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.SfGrid.WPF.19.4.0.47\lib\net46\Syncfusion.SfGrid.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfNavigationDrawer.WPF, Version=19.4460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.SfNavigationDrawer.WPF.19.4.0.47\lib\net46\Syncfusion.SfNavigationDrawer.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSkinManager.WPF, Version=19.4460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfSkinManager.WPF.19.4.0.50\lib\net46\Syncfusion.SfSkinManager.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SfTextInputLayout.WPF, Version=19.4460.0.48, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.SfTextInputLayout.WPF.19.4.0.48\lib\net46\Syncfusion.SfTextInputLayout.WPF.dll</HintPath>
@@ -102,6 +105,9 @@
     </Reference>
     <Reference Include="Syncfusion.SpellChecker.Base, Version=19.4460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.SpellChecker.Base.19.4.0.47\lib\net46\Syncfusion.SpellChecker.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Themes.MaterialLightBlue.WPF, Version=19.4460.0.50, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Themes.MaterialLightBlue.WPF.19.4.0.50\lib\net46\Syncfusion.Themes.MaterialLightBlue.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Tools.Base, Version=19.4460.0.47, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.Tools.Base.19.4.0.47\lib\net46\Syncfusion.Tools.Base.dll</HintPath>
