@@ -29,7 +29,13 @@ namespace ProyectoParking.vistas
 
         private void Finalizar_Click(object sender, RoutedEventArgs e)
         {
-            //TODO hacer que esto elimine del dataGrid no de la base de datos
+            vm.FinalizarEstacionamiento();
+            DialogResult = true;
+        }
+
+        private void Volver_Click(object sender, RoutedEventArgs e)
+        {
+            // Cerrará el dialogo
             DialogResult = true;
         }
     }

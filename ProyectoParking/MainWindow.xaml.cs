@@ -25,6 +25,7 @@ namespace ProyectoParking
         private MainWindowVM vm = new MainWindowVM();
         public MainWindow()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Properties.Settings.Default.LicenciaSyncfusion);
             InitializeComponent();
             ServicioDatabase.ConnectDatabase();
             this.contentControl.Content = new Inicio();

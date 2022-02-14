@@ -22,6 +22,7 @@ namespace ProyectoParking.vistamodelo
             set { SetProperty(ref estacionamiento, value); }
         }
 
+
         //Constructor
         public VerEstacionamientosVM(Estacionamiento estacionamiento) 
         {
@@ -32,19 +33,20 @@ namespace ProyectoParking.vistamodelo
         public VerEstacionamientosVM ()
         {
             Estacionamiento = WeakReferenceMessenger.Default.Send<EstacionamientoSelMessage>();
+            Estacionamiento.Importe = CalcularImporte();
         }
 
         //Metodos
         public void FinalizarEstacionamiento()
         {
-            //TODO esto no tiene que eliminar de la base de datos, simplemente tiene que poner alguna propiedad de estacionado a false
-            ServicioDatabase.EliminarEstacionamiento(Estacionamiento);
+            Estacionamiento.Salida = DateTime.Now.ToString();
+            ServicioDatabase.EditarEstacionamiento(Estacionamiento);
             
         }
 
         public double CalcularImporte()
         {
-            //probar cuando Ruben acabe y se pueda conectar
+            //TODO hacer que si es cliente tenga un descuento
             double precioXMin = 1;
             DateTime fecharegistro = DateTime.Parse(Estacionamiento.Entrada);
             var tiempo = (DateTime.Now - fecharegistro).TotalMinutes;
