@@ -1,5 +1,6 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using ProyectoParking.servicios;
+using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +21,9 @@ namespace ProyectoParking.ClasesModelo
             set { SetProperty(ref id_estacionamientos, value); }
         }
 
-        private int id_vehiculo;
+        private int? id_vehiculo;
 
-        public int Id_vehiculo
+        public int? Id_vehiculo
         {
             get { return id_vehiculo; }
             set { SetProperty(ref id_vehiculo, value); }
@@ -89,9 +90,31 @@ namespace ProyectoParking.ClasesModelo
             this.Id_estacionamientos = id_estacionamientos;
             this.Id_vehiculo = id_vehiculo;
             this.Tipo = ServicioDetectarVehiculo.ComprobarVehiculo(foto);
-            this.Matricula = ServicioMatricula.GetMatricula(foto, Tipo);
+            this.Matricula = ServicioMatricula.SacarMatricula(foto, Tipo);
             this.Entrada = DateTime.Now.ToLongTimeString();
             this.salida = null;
+            this.Importe = default;
+        }
+
+        public Estacionamiento(int id_estacionamientos, string foto)
+        {
+            this.Id_estacionamientos = id_estacionamientos;
+            this.Tipo = ServicioDetectarVehiculo.ComprobarVehiculo(foto);
+            this.Matricula = ServicioMatricula.SacarMatricula(foto, Tipo);
+            foreach (Vehiculo v in ServicioDatabase.GetVehiculos())
+            {
+                if (v.Matricula == Matricula)
+                {
+                    this.Id_vehiculo = v.IdVehiculo;
+                }
+                else
+                {
+                    this.Id_vehiculo = null;
+                }
+
+            }
+            this.Entrada = DateTime.Now.ToLongTimeString();
+            this.salida = "";
             this.Importe = default;
         }
 
