@@ -1,5 +1,9 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using ProyectoParking.ClasesModelo;
+using ProyectoParking.mensajeria;
+using ProyectoParking.servicios;
 using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
@@ -20,9 +24,31 @@ namespace ProyectoParking.vistamodelo
             set { SetProperty(ref estacionamientos, value); }
         }
 
+        private Estacionamiento estacionamientoSel;
+
+        public Estacionamiento EstacionamientoSel
+        {
+            get { return estacionamientoSel; }
+            set { SetProperty(ref estacionamientoSel, value); }
+        }
+
+        public RelayCommand VerDatosCommand { get; }
         public EstacionamientosVM()
         {
             Estacionamientos = ServicioDatabase.GetEstacionamientos();
+            EstacionamientoSel = new Estacionamiento();
+            VerDatosCommand = new RelayCommand(VerFormularioEstacionamiento);
+
+            WeakReferenceMessenger.Default.Register<EstacionamientosVM, EstacionamientoSelMessage>
+                (this, (r, m) =>
+                {
+                    m.Reply(EstacionamientoSel);
+                });
+        }
+
+        private void VerFormularioEstacionamiento()
+        {
+            ServicioNavegacion.AbrriFormularioEstacionamientos();
         }
     }
 }

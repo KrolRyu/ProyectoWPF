@@ -1,5 +1,7 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Messaging;
 using ProyectoParking.ClasesModelo;
+using ProyectoParking.mensajeria;
 using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoParking.vistamodelo
 {
-    class VerEstacionamientosVM: ObservableObject
+    class VerEstacionamientosVM: ObservableRecipient
     {
         //Propiedades
         private Estacionamiento estacionamiento;
@@ -29,7 +31,7 @@ namespace ProyectoParking.vistamodelo
 
         public VerEstacionamientosVM ()
         {
-
+            Estacionamiento = WeakReferenceMessenger.Default.Send<EstacionamientoSelMessage>();
         }
 
         //Metodos

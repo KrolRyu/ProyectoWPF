@@ -169,6 +169,7 @@
     <Compile Include="ClasesModelo\Estacionamiento.cs" />
     <Compile Include="ClasesModelo\Marca.cs" />
     <Compile Include="convertidores\TipoVehiculoToImageConverter.cs" />
+    <Compile Include="mensajeria\EstacionamientoSelMessage.cs" />
     <Compile Include="servicios\ServicioDatabase.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />

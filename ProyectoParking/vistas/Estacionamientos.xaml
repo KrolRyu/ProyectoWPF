@@ -13,11 +13,13 @@
 
     </UserControl.Resources>
 
-    <Grid>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+            <Button Width="100" Height="50" Content="Ver Datos" Command="{Binding Path=VerDatosCommand}" />
+        </StackPanel>
         <ListBox ItemsSource="{Binding Path=Estacionamientos}"
                  SelectedItem="{Binding Path=EstacionamientoSel}"
-                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                 MouseDoubleClick="ListBoxItem_DoubleClick">
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel></WrapPanel>
@@ -36,5 +38,5 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-    </Grid>
+    </DockPanel>
 </UserControl>
