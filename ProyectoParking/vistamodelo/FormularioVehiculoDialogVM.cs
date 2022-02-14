@@ -59,12 +59,12 @@ namespace ProyectoParking.vistamodelo
 
         public void SubirImagenAzure()
         {
-            try
-            {
-                FotoVehiculo = ServicioDialogos.ExaminarImagen();
-                FotoVehiculo = ServicioImgs.SubirImagenAAzure(FotoVehiculo);
-            }
-            catch(Exception e)
+
+            FotoVehiculo = ServicioDialogos.ExaminarImagen();
+            FotoVehiculo = ServicioImgs.SubirImagenAAzure(FotoVehiculo);
+
+            //El servicio de subir imagenes a azure devuelve cadena vacia si da una excepcion
+            if(fotoVehiculo == "")
             {
                 ServicioDialogos.ServicioMessageBox("Se ha producido un error subiendo la imagen", "ERROR", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
             }

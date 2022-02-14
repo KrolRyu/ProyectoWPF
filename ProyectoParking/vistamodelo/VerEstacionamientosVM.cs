@@ -35,13 +35,14 @@ namespace ProyectoParking.vistamodelo
         //Metodos
         public void FinalizarEstacionamiento()
         {
+            //TODO esto no tiene que eliminar de la base de datos, simplemente tiene que poner alguna propiedad de estacionado a false
             ServicioDatabase.EliminarEstacionamiento(Estacionamiento);
             
         }
 
         public double CalcularImporte()
         {
-            //probar cuando ruben acabe y se pueda conectar
+            //probar cuando Ruben acabe y se pueda conectar
             double precioXMin = 1;
             DateTime fecharegistro = DateTime.Parse(Estacionamiento.Entrada);
             var tiempo = (DateTime.Now - fecharegistro).TotalMinutes;
