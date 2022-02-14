@@ -46,6 +46,7 @@ namespace ProyectoParking.vistamodelo
 
         public double CalcularImporte()
         {
+            //TODO hacer que si es cliente tenga un descuento
             double precioXMin = 1;
             DateTime fecharegistro = DateTime.Parse(Estacionamiento.Entrada);
             var tiempo = (DateTime.Now - fecharegistro).TotalMinutes;
