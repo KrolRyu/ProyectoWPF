@@ -327,6 +327,53 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+        public static void EditarEstacionamiento(Estacionamiento estacionamiento)
+        {
+            conexion.Open();
+            SqliteCommand comando = conexion.CreateCommand();
+
+            comando.CommandText = "UPDATE estacionamientos " +
+                                  "SET id_estacionamiento = '" + estacionamiento.Id_estacionamientos + "'," +
+                                       "id_vehiculo = '" + estacionamiento.Id_vehiculo + "'," +
+                                       "matricula = '" + estacionamiento.Matricula + "'," +
+                                       "entrada = '" + estacionamiento.Entrada + "'," +
+                                       "salida = '" + estacionamiento.Salida + "'," +
+                                       "importe = '" + estacionamiento.Importe + "'," +
+                                       "tipo = '" + estacionamiento.Tipo + "'" +
+                                   "WHERE id_estacionamiento =" + estacionamiento.Id_estacionamientos;
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
+        }
+
+        public static void InsertarEstacionamiento(Estacionamiento estacionamiento)
+        {
+            conexion.Open();
+            SqliteCommand comando = conexion.CreateCommand();
+            comando.CommandText = "insert into estacionamientos (id_estacionamiento, id_vehiculo, matricula, entrada, salida, importe, tipo) VALUES (@id_estacionamiento, @id_vehiculo, @matricula, @entrada, @salida, importe, tipo);";
+            comando.Parameters.Add("@id_estacionamiento", SqliteType.Integer);
+            comando.Parameters.Add("@id_vehiculo", SqliteType.Integer);
+            comando.Parameters.Add("@matricula", SqliteType.Text);
+            comando.Parameters.Add("@entrada", SqliteType.Text);
+            comando.Parameters.Add("@salida", SqliteType.Text);
+            comando.Parameters.Add("@importe", SqliteType.Real);
+            comando.Parameters.Add("@tipo", SqliteType.Text);
+
+            comando.Parameters["@id_estacionamiento"].Value = estacionamiento.Id_estacionamientos;
+            comando.Parameters["@id_vehiculo"].Value = estacionamiento.Id_vehiculo;
+            comando.Parameters["@matricula"].Value = estacionamiento.Matricula;
+            comando.Parameters["@entrada"].Value = estacionamiento.Entrada;
+            comando.Parameters["@salida"].Value = estacionamiento.Salida;
+            comando.Parameters["@importe"].Value = estacionamiento.Importe;
+            comando.Parameters["@tipo"].Value = estacionamiento.Tipo;
+
+            comando.ExecuteNonQuery();
+
+            //Cerramos la conexión
+            conexion.Close();
+        }
+
         #endregion
     }
 }

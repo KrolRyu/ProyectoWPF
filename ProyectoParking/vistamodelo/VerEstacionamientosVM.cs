@@ -22,6 +22,7 @@ namespace ProyectoParking.vistamodelo
             set { SetProperty(ref estacionamiento, value); }
         }
 
+
         //Constructor
         public VerEstacionamientosVM(Estacionamiento estacionamiento) 
         {
@@ -38,9 +39,8 @@ namespace ProyectoParking.vistamodelo
         //Metodos
         public void FinalizarEstacionamiento()
         {
-            
-            //TODO esto no tiene que eliminar de la base de datos, simplemente tiene que poner alguna propiedad de estacionado a false
             Estacionamiento.Salida = DateTime.Now.ToString();
+            ServicioDatabase.EditarEstacionamiento(Estacionamiento);
             
         }
 
