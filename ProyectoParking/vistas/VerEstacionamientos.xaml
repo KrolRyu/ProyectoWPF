@@ -7,50 +7,60 @@
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d"
         Title="VerEstacionamientos" Height="450" Width="800">
-    <StackPanel>
+
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="20" />
+        </Style>
+    </Window.Resources>
+    
+    <StackPanel Margin="10">
         <TextBlock>
-            <Run Text="ID Estacionamiento: " />
+            <Run Text="ID Estacionamiento: " FontWeight="Bold"/>
             <Run Text="{Binding Path=Estacionamiento.Id_estacionamientos}" />
         </TextBlock>
         <TextBlock>
-            <Run Text="Id Vehiculo: " />
+            <Run Text="Id Vehiculo: " FontWeight="Bold"/>
             <Run Text="{Binding Path=Estacionamiento.Id_vehiculo}" />
         </TextBlock>
         <TextBlock>
-            <Run Text="Matricula: " />
+            <Run Text="Matricula: " FontWeight="Bold" />
             <Run Text="{Binding Path=Estacionamiento.Matricula}" />
         </TextBlock>
         <TextBlock>
-            <Run Text="Entrada: " />
+            <Run Text="Entrada: " FontWeight="Bold"/>
             <Run Text="{Binding Path=Estacionamiento.Entrada}" />
         </TextBlock>
         <TextBlock>
-            <Run Text="Salida: " />
+            <Run Text="Salida: " FontWeight="Bold"/>
             <Run Text="{Binding Path=Estacionamiento.Salida}" />
         </TextBlock>
         <TextBlock>
-            <Run Text="Importe: " />
+            <Run Text="Importe: " FontWeight="Bold"/>
             <Run Text="{Binding Path=Estacionamiento.Importe}" />
         </TextBlock>
         <TextBlock>
-            <Run Text="Tipo: " />
+            <Run Text="Tipo: " FontWeight="Bold"/>
             <Run Text="{Binding Path=Estacionamiento.Tipo}" />
         </TextBlock>
 
         <MediaElement Name="Gif" />
         <DockPanel LastChildFill="False"
-                   Margin="20">
+                   Margin="20"
+                   HorizontalAlignment="Center">
             <!--Cambiar iconos-->
             <syncfusion:ButtonAdv DockPanel.Dock="Right"
                                   Label="Finalizar estacionamiento"
                                   SmallIcon="/img/remove.png"
                                   IsDefault="True"
-                                  Click="Finalizar_Click" />
+                                  Click="Finalizar_Click"
+                                  Height="40"/>
             <syncfusion:ButtonAdv DockPanel.Dock="Right"
                                   Label="Volver"
-                                  SmallIcon="/img/camera.png"
+                                  SmallIcon="/img/return.png"
                                   IsCancel="True" 
-                                  Click="Volver_Click"/>
+                                  Click="Volver_Click"
+                                  Margin="0,0,10,0"/>
         </DockPanel>
     </StackPanel>
 </Window>
