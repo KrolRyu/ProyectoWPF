@@ -36,6 +36,8 @@
             <Run Text="Tipo: " />
             <Run Text="{Binding Path=Estacionamiento.Tipo}" />
         </TextBlock>
+
+        <MediaElement Name="Gif" />
         <DockPanel LastChildFill="False"
                    Margin="20">
             <!--Cambiar iconos-->
@@ -47,7 +49,8 @@
             <syncfusion:ButtonAdv DockPanel.Dock="Right"
                                   Label="Volver"
                                   SmallIcon="/img/camera.png"
-                                  IsCancel="True" />
+                                  IsCancel="True" 
+                                  Click="Volver_Click"/>
         </DockPanel>
     </StackPanel>
 </Window>
