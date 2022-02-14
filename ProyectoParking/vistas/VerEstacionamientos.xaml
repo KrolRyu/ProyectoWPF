@@ -8,34 +8,34 @@
         mc:Ignorable="d"
         Title="VerEstacionamientos" Height="450" Width="800">
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock>Id Estacionamiento</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamiento.Id_estacionamientos}"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock>Id Vehiculo</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamiento.Id_vehiculo}"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock>Matricula</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamiento.Matricula}"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock>Entrada</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamiento.Entrada}"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock>Salida</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamiento.Salida}"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock>Importe</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamiento.Importe}"></TextBlock>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock>Tipo</TextBlock>
-            <TextBlock Text="{Binding Path=Estacionamiento.Tipo}"></TextBlock>
-        </StackPanel>
+        <TextBlock>
+            <Run Text="ID Estacionamiento: " />
+            <Run Text="{Binding Path=Estacionamiento.Id_estacionamientos}" />
+        </TextBlock>
+        <TextBlock>
+            <Run Text="Id Vehiculo: " />
+            <Run Text="{Binding Path=Estacionamiento.Id_vehiculo}" />
+        </TextBlock>
+        <TextBlock>
+            <Run Text="Matricula: " />
+            <Run Text="{Binding Path=Estacionamiento.Matricula}" />
+        </TextBlock>
+        <TextBlock>
+            <Run Text="Entrada: " />
+            <Run Text="{Binding Path=Estacionamiento.Entrada}" />
+        </TextBlock>
+        <TextBlock>
+            <Run Text="Salida: " />
+            <Run Text="{Binding Path=Estacionamiento.Salida}" />
+        </TextBlock>
+        <TextBlock>
+            <Run Text="Importe: " />
+            <Run Text="{Binding Path=Estacionamiento.Importe}" />
+        </TextBlock>
+        <TextBlock>
+            <Run Text="Tipo: " />
+            <Run Text="{Binding Path=Estacionamiento.Tipo}" />
+        </TextBlock>
         <DockPanel LastChildFill="False"
                    Margin="20">
             <!--Cambiar iconos-->
