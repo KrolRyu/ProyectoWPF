@@ -78,5 +78,15 @@ namespace ProyectoParking.Properties {
                 return ((string)(this["RutaConexionDatabase"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("NTY2OTI3QDMxMzkyZTM0MmUzMG85Q0toWFI2U2dGcVIwdjlXRHBDVGlHanpxZFlWVEJLcnZWUWtuSE5Ee" +
+            "kU9")]
+        public string LicenciaSyncfusion {
+            get {
+                return ((string)(this["LicenciaSyncfusion"]));
+            }
+        }
     }
 }

@@ -20,5 +20,8 @@
     <Setting Name="RutaConexionDatabase" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Data Source=C:/ProyectoParking/database/parking.db</Value>
     </Setting>
+    <Setting Name="LicenciaSyncfusion" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">NTY2OTI3QDMxMzkyZTM0MmUzMG85Q0toWFI2U2dGcVIwdjlXRHBDVGlHanpxZFlWVEJLcnZWUWtuSE5EekU9</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
