@@ -35,7 +35,16 @@ namespace ProyectoParking.vistamodelo
         public RelayCommand VerDatosCommand { get; }
         public EstacionamientosVM()
         {
-            Estacionamientos = ServicioDatabase.GetEstacionamientos();
+            Estacionamientos = new ObservableCollection<Estacionamiento>();
+            ObservableCollection<Estacionamiento> listaEstacionamientos = ServicioDatabase.GetEstacionamientos();
+            foreach(Estacionamiento estacionamiento in listaEstacionamientos)
+            {
+                if(estacionamiento.Salida == "")
+                {
+                    Estacionamientos.Add(estacionamiento);
+                }
+            }
+
             EstacionamientoSel = new Estacionamiento();
             VerDatosCommand = new RelayCommand(VerFormularioEstacionamiento);
 
