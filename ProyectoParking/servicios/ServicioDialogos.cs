@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace ProyectoParking.servicios
 {
-    class ServicioDialogos
+    static class ServicioDialogos
     {
         public static string ArchivoSeleccionado { get; set; }
 

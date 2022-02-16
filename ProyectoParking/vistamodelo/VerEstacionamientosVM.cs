@@ -11,26 +11,18 @@ using System.Threading.Tasks;
 
 namespace ProyectoParking.vistamodelo
 {
-    class VerEstacionamientosVM: ObservableRecipient
+    class VerEstacionamientosVM : ObservableRecipient
     {
         //Propiedades
         private Estacionamiento estacionamiento;
 
-        public  Estacionamiento Estacionamiento
+        public Estacionamiento Estacionamiento
         {
             get { return estacionamiento; }
             set { SetProperty(ref estacionamiento, value); }
         }
 
-
-        //Constructor
-        public VerEstacionamientosVM(Estacionamiento estacionamiento) 
-        {
-            this.Estacionamiento = estacionamiento;
-            Estacionamiento.Importe = CalcularImporte();
-        }
-
-        public VerEstacionamientosVM ()
+        public VerEstacionamientosVM()
         {
             Estacionamiento = WeakReferenceMessenger.Default.Send<EstacionamientoSelMessage>();
             Estacionamiento.Importe = CalcularImporte();
@@ -41,7 +33,7 @@ namespace ProyectoParking.vistamodelo
         {
             Estacionamiento.Salida = DateTime.Now.ToString();
             ServicioDatabase.EditarEstacionamiento(Estacionamiento);
-            
+
         }
 
         public double CalcularImporte()
@@ -49,7 +41,7 @@ namespace ProyectoParking.vistamodelo
             //Si tiene un vehiculo asociado significa que es abonado
             int descuento = 20;
             bool abonado = false;
-            if(Estacionamiento.Id_vehiculo != null)
+            if (Estacionamiento.Id_vehiculo != null)
             {
                 abonado = true;
             }
@@ -58,7 +50,7 @@ namespace ProyectoParking.vistamodelo
             var tiempo = (DateTime.Now - fecharegistro).TotalMinutes;
             if (abonado)
             {
-                return (double.Parse(tiempo.ToString()) * precioXMin) * (descuento/100);
+                return (double.Parse(tiempo.ToString()) * precioXMin) * (descuento / 100);
             }
             else
             {
