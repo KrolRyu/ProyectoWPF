@@ -8,11 +8,9 @@ using System.Windows;
 
 namespace ProyectoParking.servicios
 {
-    class ServicioDialogos
+    static class ServicioDialogos
     {
-        private static string archivoSeleccionado;
-
-        public static string ArchivoSeleccionado { get => archivoSeleccionado; set => archivoSeleccionado = value; }
+        public static string ArchivoSeleccionado { get; set; }
 
         public static string ExaminarImagen()
         {
