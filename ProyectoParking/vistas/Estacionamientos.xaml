@@ -10,6 +10,11 @@
 
     <UserControl.Resources>
         <convertidores:TipoVehiculoToImageConverter x:Key="TipoVehiculoToImageConverter" />
+        
+        <Style TargetType="TextBlock" x:Key="Estilo">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="25" />
+        </Style>
 
     </UserControl.Resources>
 
@@ -28,13 +33,13 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <!-- TODO: Que aparezca mas info para saber de quien es el vehiculo -->
                     <StackPanel>
-                        <TextBlock HorizontalAlignment="Center" FontSize="25">
+                        <TextBlock Style="{StaticResource Estilo}">
                             <Run Text="ID Vehiculo:" />
                             <Run Text="{Binding Path=Id_vehiculo}" />
                         </TextBlock>
                         <Image Source="{Binding Path=Tipo, Converter={StaticResource TipoVehiculoToImageConverter}}" Width="100" Height="200"></Image>
+                        <TextBlock Text="{Binding Path=Matricula}" Style="{StaticResource Estilo}" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
