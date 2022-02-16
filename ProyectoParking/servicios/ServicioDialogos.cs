@@ -14,9 +14,10 @@ namespace ProyectoParking.servicios
 
         public static string ExaminarImagen()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;";
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;"
+            };
 
 
             bool? resultado = openFileDialog.ShowDialog();
