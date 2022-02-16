@@ -22,7 +22,7 @@ namespace ProyectoParking.vistas
     /// </summary>
     public partial class Estacionamientos : UserControl
     {
-        private EstacionamientosVM vm = new EstacionamientosVM();
+        private readonly EstacionamientosVM vm = new EstacionamientosVM();
         public Estacionamientos()
         {
             InitializeComponent();

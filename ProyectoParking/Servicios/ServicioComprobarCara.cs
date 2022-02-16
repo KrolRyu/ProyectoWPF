@@ -14,7 +14,7 @@ namespace ProyectoParking.Servicios
         {
             var response = PostCara(imagen);
             Root[] respuesta = JsonConvert.DeserializeObject<Root[]>(response.Content);
-            return respuesta[0].faceAttributes;
+            return respuesta[0].FaceAttributes;
         }
 
         public static IRestResponse PostCara(string imagen)
@@ -34,23 +34,23 @@ namespace ProyectoParking.Servicios
         //Clases para convertir el JSON
         public class FaceRectangle
         {
-            public int top { get; set; }
-            public int left { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            public int Top { get; set; }
+            public int Left { get; set; }
+            public int Width { get; set; }
+            public int Height { get; set; }
         }
 
         public class FaceAttributes
         {
-            public string gender { get; set; }
-            public double age { get; set; }
+            public string Gender { get; set; }
+            public double Age { get; set; }
         }
 
         public class Root
         {
-            public string faceId { get; set; }
-            public FaceRectangle faceRectangle { get; set; }
-            public FaceAttributes faceAttributes { get; set; }
+            public string FaceId { get; set; }
+            public FaceRectangle FaceRectangle { get; set; }
+            public FaceAttributes FaceAttributes { get; set; }
         }
     }
 }

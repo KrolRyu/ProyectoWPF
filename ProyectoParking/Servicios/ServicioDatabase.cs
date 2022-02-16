@@ -19,7 +19,7 @@ namespace ProyectoParking.Servicios
 
         //Crea una conexión al fichero de base de datos parking.db
         //Si no existe, lo creará
-        static SqliteConnection conexion = new SqliteConnection(Properties.Settings.Default.RutaConexionDatabase);
+        static readonly SqliteConnection conexion = new SqliteConnection(Properties.Settings.Default.RutaConexionDatabase);
         public static void ConnectDatabase()
         {
             //Abre la conexión con la base de datos
