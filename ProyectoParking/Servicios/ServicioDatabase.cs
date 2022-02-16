@@ -230,6 +230,7 @@ namespace ProyectoParking.Servicios
         public static void EditarCliente(Cliente cliente)
         {
             conexion.Open();
+
             SqliteCommand comando = conexion.CreateCommand();
 
             comando.CommandText = "UPDATE clientes " +
@@ -250,10 +251,18 @@ namespace ProyectoParking.Servicios
         public static void EliminarCliente(Cliente cliente)
         {
             conexion.Open();
-            SqliteCommand comando = conexion.CreateCommand();
+            try
+            {
+                SqliteCommand comando = conexion.CreateCommand();
 
-            comando.CommandText = "DELETE FROM clientes WHERE id_cliente = " + cliente.IdCliente;
-            comando.ExecuteNonQuery();
+                comando.CommandText = "DELETE FROM clientes WHERE id_cliente = " + cliente.IdCliente;
+                comando.ExecuteNonQuery();
+
+            }
+            catch (NullReferenceException)
+            {
+                ServicioDialogos.ServicioMessageBox("Selecciona un cliente para poder borrarlo", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
             //Cerramos la conexión
             conexion.Close();

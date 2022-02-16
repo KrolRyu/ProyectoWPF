@@ -45,7 +45,15 @@ namespace ProyectoParking.vistamodelo
 
         public void EditarCliente()
         {
-            ServicioNavegacion.AbrirFormularioCliente(ClienteSel, true);
+            if(ClienteSel.Documento != null)
+            {
+                ServicioNavegacion.AbrirFormularioCliente(ClienteSel, true);
+
+            }
+            else
+            {
+                ServicioDialogos.ServicioMessageBox("Selecciona un cliente para poder editarlo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             RecargarDataGrid();
         }
 
