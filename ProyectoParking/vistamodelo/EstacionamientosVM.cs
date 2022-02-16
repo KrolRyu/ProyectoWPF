@@ -45,7 +45,7 @@ namespace ProyectoParking.vistamodelo
                 }
             }
 
-            EstacionamientoSel = new Estacionamiento();
+            EstacionamientoSel = null;
             VerDatosCommand = new RelayCommand(VerFormularioEstacionamiento);
 
             WeakReferenceMessenger.Default.Register<EstacionamientosVM, EstacionamientoSelMessage>

@@ -181,8 +181,6 @@
     <Compile Include="mensajeria\EstacionamientoSelMessage.cs" />
     <Compile Include="servicios\ServicioDatabase.cs" />
     <Compile Include="Servicios\ServicioComprobarCara.cs" />
-    <Compile Include="Servicios\ServicioComprobarCara.cs" />
-    <Compile Include="Servicios\ServicioComprobarCara.cs" />
     <Compile Include="servicios\ServicioDetectarVehiculo.cs" />
     <Compile Include="servicios\ServicioDialogos.cs" />
     <Compile Include="Servicios\ServicioImgs.cs" />

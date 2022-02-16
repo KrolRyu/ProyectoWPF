@@ -48,10 +48,10 @@ namespace ProyectoParking.servicios
         public static IRestResponse PostMatricula(string imagen)
         {
             //Cambiar variables a variables de configuracion
-            var client = new RestClient("https://reconocimientomatriculasproyectoparking.cognitiveservices.azure.com/vision/v3.2/read/analyze");
+            var client = new RestClient(Properties.Settings.Default.EndpointMatricula);
             var request = new RestRequest(Method.POST);
             string data = "{ 'url':'" + imagen + "'}";
-            request.AddHeader("Ocp-Apim-Subscription-Key", "5b398d14a7424edca5be3158a45093ce");
+            request.AddHeader("Ocp-Apim-Subscription-Key", Properties.Settings.Default.LicenciaIAMatricula);
             request.AddHeader("Content-Type", "application/json");
             request.AddJsonBody(data);
             var response = client.Execute(request);

@@ -13,7 +13,7 @@ namespace ProyectoParking.servicios
     /// </summary>
     internal class ServicioNavegacion
     {
-        public ServicioNavegacion() { }
+        protected ServicioNavegacion() { }
 
         /// <summary>
         /// Abre el formulario de cliente para crear un cliente nuevo

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
 using ProyectoParking.ClasesModelo;
+using ProyectoParking.servicios;
 using ProyectoParking.vistamodelo;
 using ProyectoParking.vistas;
 using System;
@@ -21,6 +22,7 @@ namespace ProyectoParking.Servicios
 
         //Crea una conexión al fichero de base de datos parking.db
         //Si no existe, lo creará
+        static readonly SqliteConnection conexion = new SqliteConnection(Properties.Settings.Default.RutaConexionDatabase);
         static SqliteConnection conexion = new SqliteConnection(Properties.Settings.Default.RutaConexionDatabase);
 
         /// <summary>
@@ -146,11 +148,19 @@ namespace ProyectoParking.Servicios
         public static void EliminarVehiculo(Vehiculo vehiculo)
         {
             conexion.Open();
-            SqliteCommand comando = conexion.CreateCommand();
 
-            comando.CommandText = "DELETE FROM vehiculos " +
-                                   "WHERE id_vehiculo =" + vehiculo.IdVehiculo;
-            comando.ExecuteNonQuery();
+            try
+            {
+                SqliteCommand comando = conexion.CreateCommand();
+
+                comando.CommandText = "DELETE FROM vehiculos " +
+                   "WHERE id_vehiculo =" + vehiculo.IdVehiculo;
+                comando.ExecuteNonQuery();
+            }
+            catch (NullReferenceException)
+            {
+                ServicioDialogos.ServicioMessageBox("Tienes que seleccionar un vehículo para eliminar", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
             //Cerramos la conexión
             conexion.Close();
@@ -270,6 +280,7 @@ namespace ProyectoParking.Servicios
         public static void EditarCliente(Cliente cliente)
         {
             conexion.Open();
+
             SqliteCommand comando = conexion.CreateCommand();
 
             comando.CommandText = "UPDATE clientes " +
@@ -278,8 +289,8 @@ namespace ProyectoParking.Servicios
                                        "documento = '" + cliente.Documento + "'," +
                                        "foto = '" + cliente.Foto + "'," +
                                        "edad = '" + cliente.Edad + "'," +
-                                       "genero = '" + cliente.Genero +"'," +
-                                       "telefono = '" + cliente.Telefono +"'" +
+                                       "genero = '" + cliente.Genero + "'," +
+                                       "telefono = '" + cliente.Telefono + "'" +
                                    "WHERE id_cliente =" + cliente.IdCliente;
             comando.ExecuteNonQuery();
 
@@ -297,10 +308,18 @@ namespace ProyectoParking.Servicios
         public static void EliminarCliente(Cliente cliente)
         {
             conexion.Open();
-            SqliteCommand comando = conexion.CreateCommand();
+            try
+            {
+                SqliteCommand comando = conexion.CreateCommand();
 
-            comando.CommandText = "DELETE FROM clientes WHERE id_cliente = " + cliente.IdCliente;
-            comando.ExecuteNonQuery();
+                comando.CommandText = "DELETE FROM clientes WHERE id_cliente = " + cliente.IdCliente;
+                comando.ExecuteNonQuery();
+
+            }
+            catch (NullReferenceException)
+            {
+                ServicioDialogos.ServicioMessageBox("Selecciona un cliente para poder borrarlo", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
 
             //Cerramos la conexión
             conexion.Close();

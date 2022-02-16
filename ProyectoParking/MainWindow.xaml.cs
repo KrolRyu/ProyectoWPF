@@ -22,7 +22,7 @@ namespace ProyectoParking
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowVM vm = new MainWindowVM();
+        private readonly MainWindowVM vm = new MainWindowVM();
         public MainWindow()
         {
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Properties.Settings.Default.LicenciaSyncfusion);
@@ -32,7 +32,7 @@ namespace ProyectoParking
             DataContext = vm;
         }
 
-        private void navigationDrawer_ItemClicked(object sender, Syncfusion.UI.Xaml.NavigationDrawer.NavigationItemClickedEventArgs e)
+        private void NavigationDrawer_ItemClicked(object sender, Syncfusion.UI.Xaml.NavigationDrawer.NavigationItemClickedEventArgs e)
         {                    
             switch (e.Item.Tag)
             {

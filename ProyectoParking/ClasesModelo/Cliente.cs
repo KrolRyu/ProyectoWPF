@@ -78,8 +78,8 @@ namespace ProyectoParking.ClasesModelo
             this.Documento = documento;
             this.Foto = foto;
             FaceAttributes respuesta = ServicioComprobarCara.ComprobarCara(foto);
-            this.Edad = (int)respuesta.age;
-            this.Genero = respuesta.gender;
+            this.Edad = (int)respuesta.Age;
+            this.Genero = respuesta.Gender;
             this.Telefono = telefono;
         }
 

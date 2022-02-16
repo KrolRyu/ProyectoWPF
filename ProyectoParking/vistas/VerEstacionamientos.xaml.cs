@@ -20,7 +20,7 @@ namespace ProyectoParking.vistas
     /// </summary>
     public partial class VerEstacionamientos : Window
     {
-        VerEstacionamientosVM vm = new VerEstacionamientosVM();
+        readonly VerEstacionamientosVM vm = new VerEstacionamientosVM();
         public VerEstacionamientos()
         {
             InitializeComponent();

@@ -88,5 +88,24 @@ namespace ProyectoParking.Properties {
                 return ((string)(this["LicenciaSyncfusion"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://reconocimientomatriculasproyectoparking.cognitiveservices.azure.com/visio" +
+            "n/v3.2/read/analyze")]
+        public string EndpointMatricula {
+            get {
+                return ((string)(this["EndpointMatricula"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5b398d14a7424edca5be3158a45093ce")]
+        public string LicenciaIAMatricula {
+            get {
+                return ((string)(this["LicenciaIAMatricula"]));
+            }
+        }
     }
 }

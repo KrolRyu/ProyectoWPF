@@ -10,12 +10,28 @@
 
     <UserControl.Resources>
         <convertidores:TipoVehiculoToImageConverter x:Key="TipoVehiculoToImageConverter" />
+        
+        <Style TargetType="TextBlock" x:Key="Estilo">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="25" />
+        </Style>
 
+        <!-- Estilo para el borde con Trigger para aplicar desenfoque  -->
+        <Style TargetType="{x:Type Button}" x:Key="EstiloBoton">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=EstacionamientoSel}" Value="{x:Null}">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
     </UserControl.Resources>
 
     <DockPanel>
         
-        <Button Margin="10" DockPanel.Dock="Bottom" Width="100" Height="50" Content="Ver Datos" Command="{Binding Path=VerDatosCommand}" />
+        <Button DockPanel.Dock="Bottom" Content="Ver Datos" Command="{Binding Path=VerDatosCommand}"  Style="{StaticResource EstiloBoton}"/>
         
         <ListBox ItemsSource="{Binding Path=Estacionamientos}"
                  SelectedItem="{Binding Path=EstacionamientoSel}"
@@ -28,13 +44,13 @@
             </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <!-- TODO: Que aparezca mas info para saber de quien es el vehiculo -->
                     <StackPanel>
-                        <TextBlock HorizontalAlignment="Center" FontSize="25">
+                        <TextBlock Style="{StaticResource Estilo}">
                             <Run Text="ID Vehiculo:" />
                             <Run Text="{Binding Path=Id_vehiculo}" />
                         </TextBlock>
                         <Image Source="{Binding Path=Tipo, Converter={StaticResource TipoVehiculoToImageConverter}}" Width="100" Height="200"></Image>
+                        <TextBlock Text="{Binding Path=Matricula}" Style="{StaticResource Estilo}" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

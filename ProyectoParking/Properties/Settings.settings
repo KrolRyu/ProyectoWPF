@@ -23,5 +23,11 @@
     <Setting Name="LicenciaSyncfusion" Type="System.String" Scope="Application">
       <Value Profile="(Default)">NTY2OTI3QDMxMzkyZTM0MmUzMG85Q0toWFI2U2dGcVIwdjlXRHBDVGlHanpxZFlWVEJLcnZWUWtuSE5EekU9</Value>
     </Setting>
+    <Setting Name="EndpointMatricula" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://reconocimientomatriculasproyectoparking.cognitiveservices.azure.com/vision/v3.2/read/analyze</Value>
+    </Setting>
+    <Setting Name="LicenciaIAMatricula" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">5b398d14a7424edca5be3158a45093ce</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
