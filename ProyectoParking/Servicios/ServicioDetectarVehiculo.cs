@@ -8,8 +8,22 @@ using System.Threading.Tasks;
 
 namespace ProyectoParking.servicios
 {
+    /// <summary>
+    /// Clase del servicio de detectar vehiculo.
+    /// Incluye los métodos necesarios para diferenciar entre un coche y una moto.
+    /// </summary>
     static class ServicioDetectarVehiculo
     {
+        /// <summary>
+        /// El  método principal para diferenciar entre coche y moto.
+        /// Es el método que se encarga de recoger la respuesta de la API REST y devolver la información necesaria
+        /// </summary>
+        /// <param name="ruta">
+        /// La ruta de la imagen
+        /// </param>
+        /// <returns>
+        /// Devuelve el tipo, coche o moto
+        /// </returns>
         public static string ComprobarVehiculo(string ruta)
         {
             var respuesta = PostVehiculo(ruta);
@@ -24,6 +38,15 @@ namespace ProyectoParking.servicios
             }
         }
 
+        /// <summary>
+        /// Hace la peticion a la API REST 
+        /// </summary>
+        /// <param name="imagen">
+        /// Ruta de la imagen
+        /// </param>
+        /// <returns>
+        /// Devuelve la respuesta de la API para que el método de comprobar vehiculo pueda sacar la información de la respuesta
+        /// </returns>
         public static IRestResponse PostVehiculo(string imagen)
         {
             var client = new RestClient(Properties.Settings.Default.EndpointIACustomVision);
@@ -36,6 +59,10 @@ namespace ProyectoParking.servicios
             return response;
         }
     }
+
+    /// <summary>
+    /// Es la clase necesaria para deserializar el objeto devuelto en forma de JSON por la API REST
+    /// </summary>
     public class Prediction
     {
         public double probability { get; set; }

@@ -8,8 +8,22 @@ using Azure.Storage.Blobs;
 
 namespace ProyectoParking.Servicios
 {
+
+    /// <summary>
+    /// Clase para subir las imagenes al contenedor de Azure
+    /// </summary>
     static class ServicioImgs
     {
+
+        /// <summary>
+        /// Método encargado de subir la imagen al contenedor de Azure
+        /// </summary>
+        /// <param name="rutaImagen">
+        /// ruta de la imagen en local
+        /// </param>
+        /// <returns>
+        /// Devuelve la URL de la imagen en Azure o cadena vacía si da algun error
+        /// </returns>
         public static String SubirImagenAAzure(string rutaImagen)
         {
             try

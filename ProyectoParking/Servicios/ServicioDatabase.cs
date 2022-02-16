@@ -12,6 +12,9 @@ using System.Windows;
 
 namespace ProyectoParking.Servicios
 {
+    /// <summary>
+    /// Clase que gestiona la base de datos en SQLite
+    /// </summary>
     static class ServicioDatabase
     {
         //Instalar el paquete NuGet Microsoft.Data.Sqlite
@@ -19,6 +22,10 @@ namespace ProyectoParking.Servicios
         //Crea una conexión al fichero de base de datos parking.db
         //Si no existe, lo creará
         static SqliteConnection conexion = new SqliteConnection(Properties.Settings.Default.RutaConexionDatabase);
+
+        /// <summary>
+        /// Crea la conexión con la base de datos y la crea si no existe y si la crea añade unos datos de ejemplo
+        /// </summary>
         public static void ConnectDatabase()
         {
             //Abre la conexión con la base de datos
@@ -78,6 +85,13 @@ namespace ProyectoParking.Servicios
 
         #region MetodosVehiculos
         // Métodos para Insertar, Editar y Borrar un vehículo
+
+        /// <summary>
+        /// Método para insertar un vehiculo
+        /// </summary>
+        /// <param name="vehiculo">
+        /// El vehiculo a insertar
+        /// </param>
         public static void InsertarVehiculo(Vehiculo vehiculo)
         {
             conexion.Open();
@@ -101,6 +115,12 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+        /// <summary>
+        /// Método para editar un vehiculo
+        /// </summary>
+        /// <param name="vehiculo">
+        /// El vehiculo a editar
+        /// </param>
         public static void EditarVehiculo(Vehiculo vehiculo)
         {
             conexion.Open();
@@ -118,6 +138,11 @@ namespace ProyectoParking.Servicios
             //Cerramos la conexión
             conexion.Close();
         }
+
+        /// <summary>
+        /// Método para eliminar un vehiculo
+        /// </summary>
+        /// <param name="vehiculo"></param>
         public static void EliminarVehiculo(Vehiculo vehiculo)
         {
             conexion.Open();
@@ -131,6 +156,12 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+        /// <summary>
+        /// Método para recoger todos los vehiculos de la base de datos
+        /// </summary>
+        /// <returns>
+        /// Devuelve una ObservableCollection con todos los vehiulos
+        /// </returns>
         public static ObservableCollection<Vehiculo> GetVehiculos()
         {
             conexion.Open();
@@ -160,6 +191,10 @@ namespace ProyectoParking.Servicios
             return listaVehiculos;
         }
 
+
+        /// <summary>
+        /// Inserta unos datos de ejemplo en la tabla de vehiculos
+        /// </summary>
         public static void InsertarDatosVehiculos()
         {
             conexion.Open();
@@ -176,6 +211,9 @@ namespace ProyectoParking.Servicios
 
         #region MetodosClientes
 
+        /// <summary>
+        /// Inserta datos de ejemplo en la tabla de Clientes
+        /// </summary>
         public static void InsertarDatosClientes()
         {
             conexion.Open();
@@ -192,7 +230,12 @@ namespace ProyectoParking.Servicios
 
 
         //metodos insertar, editar y borrrar un cliente
-
+        /// <summary>
+        /// Inserta un cliente en la BD
+        /// </summary>
+        /// <param name="cliente">
+        /// El cliente a insertar
+        /// </param>
         public static void InsertarCliente(Cliente cliente)
         {
             conexion.Open();
@@ -218,6 +261,12 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+        /// <summary>
+        /// Edita un cliente de la BD
+        /// </summary>
+        /// <param name="cliente">
+        /// El cliente a editar
+        /// </param>
         public static void EditarCliente(Cliente cliente)
         {
             conexion.Open();
@@ -238,6 +287,13 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+
+        /// <summary>
+        /// Elimina in cliente de la BD
+        /// </summary>
+        /// <param name="cliente">
+        /// El cliente a eliminar
+        /// </param>
         public static void EliminarCliente(Cliente cliente)
         {
             conexion.Open();
@@ -250,6 +306,13 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+
+        /// <summary>
+        /// Método que recoge todos los clientes de una BD
+        /// </summary>
+        /// <returns>
+        /// Una ObservableCollection de clientes con todos los clientes de la BD
+        /// </returns>
         public static ObservableCollection<Cliente> GetClientes()
         {
             conexion.Open();
@@ -285,6 +348,12 @@ namespace ProyectoParking.Servicios
 
         //Metodos para gestionar la tabla de estacionamientos
 
+        /// <summary>
+        /// Método que recoge los estacionamientos de la BD
+        /// </summary>
+        /// <returns>
+        /// Una ObservableCollection con todos los estacionamientos de la BD
+        /// </returns>
         public static ObservableCollection<Estacionamiento> GetEstacionamientos()
         {
             conexion.Open();
@@ -314,7 +383,14 @@ namespace ProyectoParking.Servicios
 
             return listaEstacionamientos;
         }
+        
 
+        /// <summary>
+        /// Método para eliminar un estacionamiento de la BD
+        /// </summary>
+        /// <param name="estacionamientos">
+        /// El estacionamiento a eliminar
+        /// </param>
         public static void EliminarEstacionamiento(Estacionamiento estacionamientos)
         {
             conexion.Open();
@@ -327,6 +403,13 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+
+        /// <summary>
+        /// Método para editar un estacionamiento
+        /// </summary>
+        /// <param name="estacionamiento">
+        /// El estacionamiento a editar
+        /// </param>
         public static void EditarEstacionamiento(Estacionamiento estacionamiento)
         {
             conexion.Open();
@@ -347,6 +430,13 @@ namespace ProyectoParking.Servicios
             conexion.Close();
         }
 
+
+        /// <summary>
+        /// Método para añadir un estacionamiento a la BD
+        /// </summary>
+        /// <param name="estacionamiento">
+        /// El estacionamiento a añadir
+        /// </param>
         public static void InsertarEstacionamiento(Estacionamiento estacionamiento)
         {
             conexion.Open();
