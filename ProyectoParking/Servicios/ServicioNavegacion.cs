@@ -11,7 +11,7 @@ namespace ProyectoParking.servicios
     // Servicio que nos permite abrir nuevas vistas
     internal class ServicioNavegacion
     {
-        public ServicioNavegacion() { }
+        protected ServicioNavegacion() { }
 
         internal static bool? AbrirFormularioCliente() => new FormularioClienteDialog().ShowDialog();
 
