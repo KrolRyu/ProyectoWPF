@@ -1,4 +1,5 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using ProyectoParking.servicios;
 using ProyectoParking.Servicios;
 using System;
 using System.Collections.Generic;
@@ -74,13 +75,20 @@ namespace ProyectoParking.ClasesModelo
 
         public Cliente(string nombre, string documento, string foto, string telefono)
         {
-            this.Nombre = nombre;
-            this.Documento = documento;
-            this.Foto = foto;
-            FaceAttributes respuesta = ServicioComprobarCara.ComprobarCara(foto);
-            this.Edad = (int)respuesta.Age;
-            this.Genero = respuesta.Gender;
-            this.Telefono = telefono;
+            try
+            {
+                this.Nombre = nombre;
+                this.Documento = documento;
+                this.Foto = foto;
+                FaceAttributes respuesta = ServicioComprobarCara.ComprobarCara(foto);
+                this.Edad = (int)respuesta.Age;
+                this.Genero = respuesta.Gender;
+                this.Telefono = telefono;
+            }
+            catch (NullReferenceException)
+            {
+                ServicioDialogos.ServicioMessageBox("Completa todos los campos para poder insertar un usuario", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+            }
         }
 
         public Cliente(int id, string nombre, string documento, string foto, int edad, string genero, string telefono)

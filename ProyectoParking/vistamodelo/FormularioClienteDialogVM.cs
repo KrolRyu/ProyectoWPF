@@ -44,9 +44,11 @@ namespace ProyectoParking.vistamodelo
 
         public void ExaminarImagen()
         {
-            RutaImagen = ServicioDialogos.ExaminarImagen();
-            ClienteSel.Foto = ServicioImgs.SubirImagenAAzure(RutaImagen);
-
+            if (ClienteSel.Foto != null)
+            {
+                RutaImagen = ServicioDialogos.ExaminarImagen();
+                ClienteSel.Foto = ServicioImgs.SubirImagenAAzure(RutaImagen);
+            }
         }
 
         public void InsertarCliente()
@@ -57,7 +59,15 @@ namespace ProyectoParking.vistamodelo
             }
             else
             {
-                ServicioDatabase.InsertarCliente(new Cliente(ClienteSel.Nombre, ClienteSel.Documento, ClienteSel.Foto, ClienteSel.Telefono));
+                if (ClienteSel.Nombre != null && ClienteSel.Documento != null && ClienteSel.Foto != null && ClienteSel.Telefono != null)
+                {
+                    ServicioDatabase.InsertarCliente(new Cliente(ClienteSel.Nombre, ClienteSel.Documento, ClienteSel.Foto, ClienteSel.Telefono));
+                }
+                else
+                {
+                    ServicioDialogos.ServicioMessageBox("Completa todos los campos para poder crear un cliente", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
             }
         }
     }
