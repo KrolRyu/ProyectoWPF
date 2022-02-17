@@ -107,5 +107,19 @@ namespace ProyectoParking.Properties {
                 return ((string)(this["LicenciaIAMatricula"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DefaultEndpointsProtocol=https;AccountName=actividadtema5;AccountKey=Plt4O/P0i4co" +
+            "Ckog+BsK/FeBXHnz6sTqtlfVW2dXCT8FIkwfO9teD7fCI5rSwbNau2dvcv3Sf9AxmkkUeOyW9A==;End" +
+            "pointSuffix=core.windows.net")]
+        public string EndpointImgs {
+            get {
+                return ((string)(this["EndpointImgs"]));
+            }
+            set {
+                this["EndpointImgs"] = value;
+            }
+        }
     }
 }
