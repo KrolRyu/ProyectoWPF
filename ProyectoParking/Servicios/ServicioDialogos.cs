@@ -8,10 +8,21 @@ using System.Windows;
 
 namespace ProyectoParking.servicios
 {
+
+    /// <summary>
+    /// Clase para manejar los diversos dialogos tales como para seleccionar una imagen o abrir un MessageBox
+    /// </summary>
     static class ServicioDialogos
     {
         public static string ArchivoSeleccionado { get; set; }
 
+
+        /// <summary>
+        /// Metodo para abrir un dialogo para seleccionar una imagen del ordenador
+        /// </summary>
+        /// <returns>
+        /// Devuelve el archivo seleccionado
+        /// </returns>
         public static string ExaminarImagen()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -36,6 +47,21 @@ namespace ProyectoParking.servicios
 
         }
 
+        /// <summary>
+        /// Método para generar un MessageBox 
+        /// </summary>
+        /// <param name="mensaje">
+        /// Mensaje del MessajeBox
+        /// </param>
+        /// <param name="titulo">
+        /// Titulo del MessageBox
+        /// </param>
+        /// <param name="boxButton">
+        /// Boton del MessageBox
+        /// </param>
+        /// <param name="messageBoxImage">
+        /// Imagen del MessageBox
+        /// </param>
         public static void ServicioMessageBox(string mensaje, string titulo, MessageBoxButton boxButton, MessageBoxImage messageBoxImage)
         {
             MessageBox.Show(mensaje, titulo, boxButton, messageBoxImage);

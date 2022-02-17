@@ -9,9 +9,24 @@ using System.Threading.Tasks;
 
 namespace ProyectoParking.servicios
 {
+    /// <summary>
+    /// Clase para sacar la matricula de un vehiculo
+    /// </summary>
     static class ServicioMatricula
     {
-
+        /// <summary>
+        /// Método encargado de gestionar las llamadas a la API para sacar la matricula.
+        /// Se encarga de recibir las respuestas de las APIs y devuelve la matricula
+        /// </summary>
+        /// <param name="imagen">
+        /// Ruta de la imagen
+        /// </param>
+        /// <param name="tipo">
+        /// El tipo de vehiculo, coche o moto
+        /// </param>
+        /// <returns>
+        /// Devuelve un string con la matricula
+        /// </returns>
         public static string SacarMatricula(string imagen, string tipo)
         {
             var response = PostMatricula(imagen);
@@ -21,6 +36,15 @@ namespace ProyectoParking.servicios
 
         }
 
+        /// <summary>
+        /// Sube la imagen al servicio de Azure y devuelve la URL para hacer el GET
+        /// </summary>
+        /// <param name="imagen">
+        /// La URL de la imagen
+        /// </param>
+        /// <returns>
+        /// Devulve la URL para poder hacer el GET
+        /// </returns>
         public static IRestResponse PostMatricula(string imagen)
         {
             //Cambiar variables a variables de configuracion
@@ -34,6 +58,19 @@ namespace ProyectoParking.servicios
             return response;
         }
 
+
+        /// <summary>
+        /// Hace el GET al servicio de Azure y saca la matricula del vehiculo
+        /// </summary>
+        /// <param name="url">
+        /// URL de la API REST
+        /// </param>
+        /// <param name="tipo">
+        /// Tipo de vehiculo, coche o moto
+        /// </param>
+        /// <returns>
+        /// Devuelve la matricula del vehiculo
+        /// </returns>
         public static string GetMatricula(string url, string tipo)
         {
             var client = new RestClient(url);
