@@ -34,7 +34,6 @@ namespace ProyectoParking.vistamodelo
         public ClientesVM()
         {
             Clientes = ServicioDatabase.GetClientes();
-            ClienteSel = new Cliente();
         }
 
         public void AñadirCliente()
@@ -45,7 +44,7 @@ namespace ProyectoParking.vistamodelo
 
         public void EditarCliente()
         {
-            if(ClienteSel.Documento != null)
+            if (ClienteSel != null)
             {
                 ServicioNavegacion.AbrirFormularioCliente(ClienteSel, true);
 
@@ -65,12 +64,16 @@ namespace ProyectoParking.vistamodelo
                 ServicioDatabase.EliminarCliente(ClienteSel);
                 RecargarDataGrid();
             }
+            catch (NullReferenceException)
+            {
+                ServicioDialogos.ServicioMessageBox("Borra los vehículos asociados al cliente primero", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
             catch (SqliteException)
             {
                 ServicioDialogos.ServicioMessageBox("Borra los vehículos asociados al cliente primero", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-        
+
         public void RecargarDataGrid()
         {
             Clientes = ServicioDatabase.GetClientes();

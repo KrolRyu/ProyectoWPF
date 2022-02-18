@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ProyectoParking.vistamodelo
 {
@@ -41,7 +42,15 @@ namespace ProyectoParking.vistamodelo
 
         public void EditarVehiculo()
         {
-            ServicioNavegacion.AbrirFormularioVehiculos(VehiculoSel, true);
+            if (VehiculoSel != null)
+            {
+                ServicioNavegacion.AbrirFormularioVehiculos(VehiculoSel, true);
+
+            }
+            else
+            {
+                ServicioDialogos.ServicioMessageBox("Selecciona un vehículo para poder editarlo", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         public void EliminarVehiculo()
