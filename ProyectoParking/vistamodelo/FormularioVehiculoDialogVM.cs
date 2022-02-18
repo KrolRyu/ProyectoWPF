@@ -74,7 +74,7 @@ namespace ProyectoParking.vistamodelo
         {
             if (nuevo)
             {
-                if (VehiculoSel.IdCliente != 0 && VehiculoSel.IdMarca != 0 && VehiculoSel.IdVehiculo != 0 && VehiculoSel.Modelo != null)
+                if (VehiculoSel.IdCliente != 0 && VehiculoSel.IdMarca != 0 && VehiculoSel.Modelo != null)
                 {
                     ServicioDatabase.InsertarVehiculo(new Vehiculo(VehiculoSel.IdVehiculo, VehiculoSel.IdCliente, FotoVehiculo, VehiculoSel.Modelo, VehiculoSel.IdMarca));
                 }
