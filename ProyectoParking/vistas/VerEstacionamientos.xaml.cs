@@ -36,7 +36,7 @@ namespace ProyectoParking.vistas
         private void Volver_Click(object sender, RoutedEventArgs e)
         {
             // Cerrará el dialogo
-            DialogResult = true;
+            DialogResult = false;
         }
     }
 }

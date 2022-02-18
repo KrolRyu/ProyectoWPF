@@ -38,6 +38,8 @@ namespace ProyectoParking.vistamodelo
 
         public void AñadirCliente()
         {
+            System.Windows.Forms.Help.ShowHelp(null, "/img/Documentacion.chm");
+
             ServicioNavegacion.AbrirFormularioCliente();
             RecargarDataGrid();
         }

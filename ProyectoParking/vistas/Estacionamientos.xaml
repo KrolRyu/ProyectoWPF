@@ -35,7 +35,7 @@
         
         <ListBox ItemsSource="{Binding Path=Estacionamientos}"
                  SelectedItem="{Binding Path=EstacionamientoSel}"
-                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                 ScrollViewer.HorizontalScrollBarVisibility="Auto" 
                  Background="#B6ADA5">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>

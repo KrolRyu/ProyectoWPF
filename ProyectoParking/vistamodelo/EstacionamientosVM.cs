@@ -57,7 +57,20 @@ namespace ProyectoParking.vistamodelo
 
         private void VerFormularioEstacionamiento()
         {
-            ServicioNavegacion.AbrriFormularioEstacionamientos();
+            ServicioNavegacion.AbrirFormularioEstacionamientos();
+            RecargarLista();
+        }
+
+        private void RecargarLista()
+        {
+            ObservableCollection<Estacionamiento> listaEstacionamientos = ServicioDatabase.GetEstacionamientos();
+            foreach (Estacionamiento estacionamiento in listaEstacionamientos)
+            {
+                if (estacionamiento.Salida == "")
+                {
+                    Estacionamientos.Add(estacionamiento);
+                }
+            }
         }
     }
 }

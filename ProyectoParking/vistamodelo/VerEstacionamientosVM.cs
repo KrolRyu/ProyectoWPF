@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProyectoParking.vistamodelo
 {
@@ -33,7 +34,6 @@ namespace ProyectoParking.vistamodelo
         {
             Estacionamiento.Salida = DateTime.Now.ToString();
             ServicioDatabase.EditarEstacionamiento(Estacionamiento);
-
         }
 
         public double CalcularImporte()

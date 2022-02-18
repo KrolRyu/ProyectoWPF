@@ -66,6 +66,6 @@ namespace ProyectoParking.servicios
         /// <returns>
         /// Devuelve el resultado del dialogo
         /// </returns>
-        internal static bool? AbrriFormularioEstacionamientos() => new VerEstacionamientos().ShowDialog();
+        internal static bool? AbrirFormularioEstacionamientos() => new VerEstacionamientos().ShowDialog();
     }
 }

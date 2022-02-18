@@ -46,7 +46,11 @@ namespace ProyectoParking
                     contentControl.Content = new Estacionamientos();
                     break;
                 case "Manual":
-                    // SE INVOCA EL MANUAL (nueva ventana)
+                    String helpFileName = @"documentacion.chm";
+                    if (System.IO.File.Exists(helpFileName))
+                    {
+                        System.Diagnostics.Process.Start(helpFileName);
+                    }
                     break;
                 default:
                     break;
