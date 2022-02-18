@@ -39,22 +39,23 @@ namespace ProyectoParking.vistamodelo
         public double CalcularImporte()
         {
             //Si tiene un vehiculo asociado significa que es abonado
-            int descuento = 20;
+            double descuento = 20;
             bool abonado = false;
             if (Estacionamiento.Id_vehiculo != null)
             {
                 abonado = true;
             }
-            double precioXMin = 1;
+            double precioXMin = 0.01;
             DateTime fecharegistro = DateTime.Parse(Estacionamiento.Entrada);
             var tiempo = (DateTime.Now - fecharegistro).TotalMinutes;
             if (abonado)
             {
-                return (double.Parse(tiempo.ToString()) * precioXMin) * (descuento / 100);
+                double precioSinDescuento = double.Parse(tiempo.ToString()) * precioXMin;
+                return Math.Round(precioSinDescuento - (precioSinDescuento * (descuento / 100)), 2);
             }
             else
             {
-                return double.Parse(tiempo.ToString()) * precioXMin;
+                return Math.Round(double.Parse(tiempo.ToString()) * precioXMin, 2);
             }
         }
 
