@@ -384,7 +384,15 @@ namespace ProyectoParking.Servicios
                 while (lector.Read())
                 {
                     int id_estacionamiento = lector.GetInt32(0);
-                    int id_vehiculo = lector.GetInt32(1);
+                    int id_vehiculo;
+                    if (lector["id_vehiculo"] is DBNull)
+                    {
+                        id_vehiculo = 0;
+                    }
+                    else
+                    {
+                        id_vehiculo = lector.GetInt32(1);
+                    }
                     string matricula = lector.GetString(2);
                     string entrada = lector.GetString(3);
                     string salida = lector.GetString(4);
