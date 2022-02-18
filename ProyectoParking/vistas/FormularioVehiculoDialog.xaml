@@ -8,6 +8,7 @@
         xmlns:local="clr-namespace:ProyectoParking.vistas"
         mc:Ignorable="d"
         Title="FormularioVehiculoDialog" Height="450" Width="800">
+
     <StackPanel Margin="20">
 
         <inputLayout:SfTextInputLayout Hint="ID Vehiculo"
