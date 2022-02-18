@@ -74,7 +74,14 @@ namespace ProyectoParking.vistamodelo
         {
             if (nuevo)
             {
-                ServicioDatabase.InsertarVehiculo(new Vehiculo(VehiculoSel.IdVehiculo, VehiculoSel.IdCliente, FotoVehiculo, VehiculoSel.Modelo, VehiculoSel.IdMarca));
+                if (VehiculoSel.IdCliente != 0 && VehiculoSel.IdMarca != 0 && VehiculoSel.IdVehiculo != 0 && VehiculoSel.Modelo != null)
+                {
+                    ServicioDatabase.InsertarVehiculo(new Vehiculo(VehiculoSel.IdVehiculo, VehiculoSel.IdCliente, FotoVehiculo, VehiculoSel.Modelo, VehiculoSel.IdMarca));
+                }
+                else
+                {
+                    ServicioDialogos.ServicioMessageBox("Introduce todos los campos correctamente para crear un vehículo", "ERROR", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                }
             }
             else
             {
