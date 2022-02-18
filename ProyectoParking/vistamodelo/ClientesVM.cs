@@ -64,10 +64,6 @@ namespace ProyectoParking.vistamodelo
                 ServicioDatabase.EliminarCliente(ClienteSel);
                 RecargarDataGrid();
             }
-            catch (NullReferenceException)
-            {
-                ServicioDialogos.ServicioMessageBox("Borra los vehículos asociados al cliente primero", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
             catch (SqliteException)
             {
                 ServicioDialogos.ServicioMessageBox("Borra los vehículos asociados al cliente primero", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);

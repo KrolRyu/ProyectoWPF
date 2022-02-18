@@ -56,6 +56,12 @@ namespace ProyectoParking.vistamodelo
         public void EliminarVehiculo()
         {
             ServicioDatabase.EliminarVehiculo(VehiculoSel);
+            RecargarDataGrid();
+        }
+
+        public void RecargarDataGrid()
+        {
+            Vehiculos = ServicioDatabase.GetVehiculos();
         }
     }
 }
