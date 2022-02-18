@@ -87,7 +87,7 @@
         </syncfusion:SfTextInputLayout>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <syncfusion:ButtonAdv SmallIcon="/img/return.png" Height="40" Margin="10" Label="Cancelar" Width="100" Click="SendButton_Click" IsCancel="True" />
+            <syncfusion:ButtonAdv SmallIcon="/img/return.png" Height="40" Margin="10" Label="Cancelar" Width="100" Click="CancelButton_Click" IsCancel="True" />
             <syncfusion:ButtonAdv SmallIcon="/img/add.png" Height="40" Margin="10" Label="Send" Width="100" Click="SendButton_Click" IsDefault="True" />
         </StackPanel>       
 

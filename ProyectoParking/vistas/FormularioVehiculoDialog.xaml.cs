@@ -42,6 +42,11 @@ namespace ProyectoParking.vistas
             vm.SubirImagenAzure();
         }
 
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
+
         private void ButtonAdv_Click_1(object sender, RoutedEventArgs e)
         {
             vm.GuardarVehiculo();
