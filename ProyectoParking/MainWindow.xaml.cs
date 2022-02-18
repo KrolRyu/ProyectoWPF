@@ -45,6 +45,9 @@ namespace ProyectoParking
                 case "Estacionamientos":
                     contentControl.Content = new Estacionamientos();
                     break;
+                case "Manual":
+                    // SE INVOCA EL MANUAL (nueva ventana)
+                    break;
                 default:
                     break;
             }
