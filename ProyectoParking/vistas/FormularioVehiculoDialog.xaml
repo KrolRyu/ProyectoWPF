@@ -71,7 +71,8 @@
             <syncfusion:ButtonAdv DockPanel.Dock="Right"
                                   Label="Cancelar"
                                   SmallIcon="/img/return.png" 
-                                  IsCancel="True"/>
+                                  IsCancel="True"
+                                  Click="CancelButton_Click"/>
         </DockPanel>
     </StackPanel>
 </Window>
