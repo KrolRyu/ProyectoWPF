@@ -16,13 +16,6 @@
             <Setter Property="Width" Value="Auto"></Setter>
             <Setter Property="Height" Value="35"></Setter>
         </Style>
-        <Style x:Key="EstiloBotonEditar" TargetType="{x:Type Image}">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding Path=VehiculoSel}" Value="{x:Null}">
-                    <Setter Property="Visibility" Value="Hidden" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
     </UserControl.Resources>
     <DockPanel >
         <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="10,10,0,0" FontSize="30" FontFamily="Kiona">CLIENTES</TextBlock>
@@ -31,7 +24,7 @@
                 <Image Source="/img/plus.png"></Image>
             </Button>
             <Button Height="40" Click="EditButton_Click">
-                <Image Source="/img/edit.png" Style="{StaticResource EstiloBotonEditar}"></Image>
+                <Image Source="/img/edit.png" ></Image>
             </Button>
             <Button Click="DeleteButton_Click">
                 <Image Source="/img/remove.png"></Image>

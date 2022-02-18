@@ -317,7 +317,7 @@ namespace ProyectoParking.Servicios
             }
             catch (NullReferenceException)
             {
-                ServicioDialogos.ServicioMessageBox("Selecciona un cliente para poder borrarlo", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                ServicioDialogos.ServicioMessageBox("Selecciona un cliente para poder borrarlo", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             //Cerramos la conexión

@@ -17,14 +17,6 @@
             <Setter Property="Width" Value="Auto"></Setter>
             <Setter Property="Height" Value="35"></Setter>
         </Style>
-        <!-- Cuando no haya vehiculo seleccionado desaparecerá el boton editar (isenabled = false no quedaba bien) -->
-        <Style x:Key="EstiloBotonEditar" TargetType="{x:Type Image}">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding Path=VehiculoSel}" Value="{x:Null}">
-                    <Setter Property="Visibility" Value="Hidden" />
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
     </UserControl.Resources>
 
     <DockPanel >
@@ -34,7 +26,7 @@
                 <Image Source="/img/plus.png"></Image>
             </Button>
             <Button Height="40" Click="EditButton_Click">
-                <Image Source="/img/edit.png"  Style="{StaticResource EstiloBotonEditar}"></Image>
+                <Image Source="/img/edit.png" />
             </Button>
             <Button Click="DeleteButton_Click">
                 <Image Source="/img/remove.png"></Image>

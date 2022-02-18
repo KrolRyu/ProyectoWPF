@@ -72,7 +72,7 @@
                 <TextBox Text="{Binding Path=ClienteSel.Foto}" />
             </syncfusion:SfTextInputLayout>
 
-            <syncfusion:ButtonAdv Content="Examinar" Height="40" Margin="0,-17,0,0"  Label="Examinar" Width="100" Click="ButtonAdv_Click" />
+            <syncfusion:ButtonAdv SmallIcon="/img/camera.png" Height="40" Margin="0,-17,0,0"  Label="Examinar" Width="100" Click="ButtonAdv_Click" />
         </StackPanel>
         <!-- InputLayout para el telefono del Cliente -->
         <syncfusion:SfTextInputLayout 
@@ -85,8 +85,11 @@
             </syncfusion:SfTextInputLayout.LeadingView>
             <TextBox Text="{Binding Path=ClienteSel.Telefono}" />
         </syncfusion:SfTextInputLayout>
-        
-        <syncfusion:ButtonAdv Content="ButtonAdv" Height="40" Margin="10" Label="Send" Width="100" Click="SendButton_Click" />
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <syncfusion:ButtonAdv SmallIcon="/img/return.png" Height="40" Margin="10" Label="Cancelar" Width="100" Click="SendButton_Click" IsCancel="True" />
+            <syncfusion:ButtonAdv SmallIcon="/img/add.png" Height="40" Margin="10" Label="Send" Width="100" Click="SendButton_Click" IsDefault="True" />
+        </StackPanel>       
 
 
 
