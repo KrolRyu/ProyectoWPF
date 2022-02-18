@@ -23,6 +23,11 @@
                     <Image Source="img/parking.png"></Image>
                 </syncfusion:NavigationItem.Icon>
             </syncfusion:NavigationItem>
+            <syncfusion:NavigationItem Header="Manual" Tag="Manual">
+                <syncfusion:NavigationItem.Icon>
+                    <Image Source="img/manual.png"></Image>
+                </syncfusion:NavigationItem.Icon>
+            </syncfusion:NavigationItem>
             <syncfusion:SfNavigationDrawer.ContentView>
                 <ContentControl
                 x:Name="contentControl"
