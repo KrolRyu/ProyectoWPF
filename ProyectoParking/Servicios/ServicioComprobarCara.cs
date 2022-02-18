@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using ProyectoParking.servicios;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,16 @@ namespace ProyectoParking.Servicios
         {
             var response = PostCara(imagen);
             Root[] respuesta = JsonConvert.DeserializeObject<Root[]>(response.Content);
-            return respuesta[0].FaceAttributes;
+            try
+            {
+                return respuesta[0].FaceAttributes;
+            }
+            catch(IndexOutOfRangeException )
+            {
+                ServicioDialogos.ServicioMessageBox("La imagen introducida no es una cara", "Error", System.Windows.MessageBoxButton.OK, System.Windows.MessageBoxImage.Error);
+                return null;
+            }
+            
         }
 
 

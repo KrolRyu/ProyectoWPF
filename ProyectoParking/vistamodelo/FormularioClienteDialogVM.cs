@@ -44,7 +44,7 @@ namespace ProyectoParking.vistamodelo
 
         public void ExaminarImagen()
         {
-            if (ClienteSel.Foto != null)
+            if (ClienteSel.Foto == null)
             {
                 RutaImagen = ServicioDialogos.ExaminarImagen();
                 ClienteSel.Foto = ServicioImgs.SubirImagenAAzure(RutaImagen);

@@ -29,7 +29,7 @@ namespace ProyectoParking.Servicios
             try
             {
                 //Cambiar a la configuracion del proyecto
-                string cadenaDeConexion = "DefaultEndpointsProtocol=https;AccountName=actividadtema5;AccountKey=Plt4O/P0i4coCkog+BsK/FeBXHnz6sTqtlfVW2dXCT8FIkwfO9teD7fCI5rSwbNau2dvcv3Sf9AxmkkUeOyW9A==;EndpointSuffix=core.windows.net";
+                string cadenaDeConexion = Properties.Settings.Default.EndpointImgs;
                 string nombreContenedorBlobs = "imgs-proyecto-parking";
 
                 var clienteBlobService = new BlobServiceClient(cadenaDeConexion);
